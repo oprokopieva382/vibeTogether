@@ -6,8 +6,8 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
- }
- h1 {
+}
+h1 {
   font-size: 2rem; /* Adjust the size as needed */
 }
 
@@ -18,7 +18,7 @@ h2 {
 h4 {
   font-size: 1rem; /* Adjust the size as needed */
 }
- #background-video {
+#background-video {
   position: fixed;
   top: 0;
   left: 0;
@@ -32,22 +32,22 @@ h4 {
   padding: 20px;
   color: #fff;
   border: 1px solid;
- }
- .logoSection {
+}
+.logoSection {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
   padding-left: 5%;
-   font-size: 170%;
+  font-size: 170%;
 }
-main {
-    display: none;
-}
+/* main {
+  display: none;
+} */
 .artistBio {
   display: flex;
   flex-wrap: wrap;
- visibility: visible
+  /* visibility: visible; */
 }
 .artistStats {
   flex: 3;
