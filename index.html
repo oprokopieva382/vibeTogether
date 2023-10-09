@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>VibeTogether</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav flex justify-center">
+        <button class="text-white font-bold px-6 py-6" type="button">EVENTS</button>
+        <button  class="text-white font-bold px-6 py-6" type="button">ARTIST BIO</button>
+      </nav>
+    </header>
+    <section>
+      <video autoplay muted loop id="background-video">
+        <source src="./assets/video/syren.mp4" type="video/mp4" />
+      </video>
+    </section>
+    <section class="logoSection"> 
+      <h1 class="logo">VibeTogether</h1>
+    </section>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
