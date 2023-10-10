@@ -5,6 +5,7 @@ const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
 
 const errorMessage = document.getElementById("errorMessage");
 
+// function to get Artist Bio information
 const getArtistBio = async (name) => {
   try {
     const response = await fetch(
@@ -20,6 +21,8 @@ const getArtistBio = async (name) => {
   }
 };
 
+
+// function to get event data information with all needed params
 const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}`;
 const options = {
   method: "GET",
