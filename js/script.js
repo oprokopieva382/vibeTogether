@@ -6,8 +6,7 @@ const willUpdateIdFormButton = document.getElementById(
 );
 const willUpdateErrorForm = document.getElementById("willUpdateErrorForm");
 
-const queryParams = ["artistName=Drake"];
-
+//function to handle event from artist bio form, call getArtistBio request
 const onSubmitArtistBio = (e) => {
   e.preventDefault();
 
@@ -20,6 +19,8 @@ const onSubmitArtistBio = (e) => {
     //getArtistBio(name)
   }
 };
+
+const queryParams = ["artistName=Drake"];
 
 willUpdateIdFormButton.addEventListener("click", onSubmitArtistBio);
 //getEventData(queryParams)//here temporary, in use now for see data response in console
