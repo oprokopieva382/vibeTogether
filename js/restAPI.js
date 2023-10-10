@@ -1,4 +1,5 @@
 import {catchArtistBioError} from "./utils.js"
+import { displayArtistBio } from "./script.js";
 
 const artistBioAPI_KEY = "982540db251e7848a4ddaec3f121f25d";
 const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
@@ -13,8 +14,9 @@ const getArtistBio = async (name) => {
     );
 
     const data = await response.json();
+    console.log(data)
     catchArtistBioError(data);
-    console.log(data);
+    displayArtistBio(data)
   } catch (error) {
     errorMessage.textContent = error.message;
     console.error(error.message);
@@ -40,6 +42,6 @@ const getEventData = async (queryParams) => {
   }
 };
 
-
+getArtistBio("Drake")
 
 export { getArtistBio, getEventData };

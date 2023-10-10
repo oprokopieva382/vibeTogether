@@ -5,6 +5,12 @@ const willUpdateIdFormButton = document.getElementById(
   "willUpdateIdFormButton"
 );
 const willUpdateErrorForm = document.getElementById("willUpdateErrorForm");
+const artistBioImg = document.getElementById("artistBioImg");
+const artistNameToDisplay = document.getElementById("artistNameToDisplay");
+const artistOnTour = document.getElementById("artistOnTour");
+const artistPlayCount = document.getElementById("artistPlayCount");
+const artistListeners = document.getElementById("artistListeners");
+const aboutTheArtistContent = document.getElementById("aboutTheArtistContent");
 
 //function to handle event from artist bio form, call getArtistBio request
 const onSubmitArtistBio = (e) => {
@@ -20,6 +26,16 @@ const onSubmitArtistBio = (e) => {
   }
 };
 
+export const displayArtistBio = (data)=> {
+  // !update with other api, existing hasn't real img
+  //artistBioImg.src = data.artist.image[1]
+  artistNameToDisplay.textContent = data.artist.name;
+  artistOnTour.textContent = `On tour: ${data.artist.ontour}`;
+  artistPlayCount.textContent = `Play count: ${data.artist.stats.playcount}`;
+  artistListeners.textContent = `Listeners: ${data.artist.stats.listeners}`;
+  // !discuss to pick either content or summary
+  aboutTheArtistContent.textContent = data.artist.bio.summary;
+}
 const queryParams = ["artistName=Drake"];
 
 willUpdateIdFormButton.addEventListener("click", onSubmitArtistBio);
