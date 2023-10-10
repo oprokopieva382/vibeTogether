@@ -1,8 +1,5 @@
+
 import {getArtistBio, getEventData} from "./restAPI.js"
-
-
-
-
 
 
 const queryParams=["artistName=Drake"]

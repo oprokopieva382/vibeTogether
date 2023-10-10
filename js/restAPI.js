@@ -22,6 +22,7 @@ const getArtistBio = async (name) => {
 };
 
 
+
 // function to get event data information with all needed params
 const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}`;
 const options = {
