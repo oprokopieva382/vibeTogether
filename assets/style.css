@@ -20,6 +20,8 @@ h2 {
 h4 {
   font-size: 1.5rem; /* Adjust the size as needed */
 }
+
+/* main page style */
 #background-video {
   position: fixed;
   top: 0;
@@ -44,14 +46,16 @@ h4 {
   font-size: 170%;
 }
 main {
-  display: none;
+  /* display: none; */
 }
+
+/* artistBioContent hidden section */
 .artistBio {
   display: flex;
   flex-wrap: wrap;
   gap: 5%;
   padding: 5%;
-  /* visibility: hidden; */
+  visibility: hidden;
   color: white;
   overflow-y: scroll;
   max-height: 100vh;
