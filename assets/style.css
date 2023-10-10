@@ -6,17 +6,19 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
+  background-color: #0f102a;
 }
 h1 {
   font-size: 2rem; /* Adjust the size as needed */
 }
 
 h2 {
-  font-size: 1.5rem; /* Adjust the size as needed */
+  font-size: 1.7rem; /* Adjust the size as needed */
+  font-weight: bold;
 }
 
 h4 {
-  font-size: 1rem; /* Adjust the size as needed */
+  font-size: 1.5rem; /* Adjust the size as needed */
 }
 #background-video {
   position: fixed;
@@ -41,17 +43,30 @@ h4 {
   padding-left: 5%;
   font-size: 170%;
 }
-/* main {
+main {
   display: none;
-} */
+}
 .artistBio {
   display: flex;
   flex-wrap: wrap;
-  /* visibility: visible; */
+  gap: 5%;
+  padding: 5%;
+  /* visibility: hidden; */
+  color: white;
+  overflow-y: scroll;
+  max-height: 100vh;
 }
 .artistStats {
   flex: 3;
 }
 .aboutTheArtist {
   flex: 6;
+}
+.artistBioImg{
+  border: 1px solid;
+  border-radius: 50%;
+  margin-bottom: 5%;
+}
+.similarArtist {
+  padding: 10% 0;
 }
