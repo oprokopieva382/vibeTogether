@@ -15,6 +15,8 @@ var eventsModalBg = document.querySelector("#events-modal-bg");
 
 
 
+
+
 // Event listeners
 
 eventsBtn.addEventListener("click", function(event) {
