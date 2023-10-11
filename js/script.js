@@ -1,21 +1,9 @@
-import {getArtistBio} from "./restAPI.js"
 
+import {getArtistBio, getEventData} from "./restAPI.js"
 
 var eventsBtn = document.querySelector("#eventsBtn");
 var eventsModal = document.querySelector("#events-modal");
 var eventsModalBg = document.querySelector("#events-modal-bg");
-
-
-
-
-
-//getArtistBio("Drake");//here temporary, in use now for see data response in console
-
-
-
-
-
-
 
 // Event listeners
 
@@ -25,4 +13,11 @@ eventsBtn.addEventListener("click", function(event) {
 
 eventsModalBg.addEventListener("click", function(event) {
     eventsModal.classList.remove("is-active");
-})
+});
+
+
+const queryParams=["artistName=Drake"];
+
+
+//getEventData(queryParams)
+//getArtistBio("Drake");//here temporary, in use now for see data response in console
