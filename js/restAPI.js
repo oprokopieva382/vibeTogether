@@ -89,7 +89,7 @@ const getArtistImgAndStatistic = async (id) => {
 };
 
 // !temporary, wait for form to be ready
-//getArtistBio("Drake")
-//getSearchArtist("Drake");
+getArtistBio("Drake")
+getSearchArtist("Drake");
 
 export { getArtistBio, getEventData, getSearchArtist };

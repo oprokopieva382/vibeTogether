@@ -1,3 +1,8 @@
+:root {
+  --main-color: #0f102a; 
+  --second-color: #b0b7db;
+  --text-color:#fff
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +11,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  background-color: #0f102a;
+  background-color: var(--main-color);
 }
 h1 {
   font-size: 2rem; /* Adjust the size as needed */
@@ -18,7 +23,7 @@ h2 {
 }
 
 h4 {
-  font-size: 1.5rem; /* Adjust the size as needed */
+  font-size: 1.2rem; /* Adjust the size as needed */
 }
 
 /* main page style */
@@ -34,7 +39,7 @@ h4 {
 .logo {
   text-align: center;
   padding: 20px;
-  color: #fff;
+  color: var(--text-color);
   border: 1px solid;
 }
 .logoSection {
@@ -56,7 +61,7 @@ main {
   gap: 5%;
   padding: 5%;
   /* visibility: hidden; */
-  color: white;
+  color: var(--text-color);
   overflow-y: scroll;
   max-height: 100vh;
 }
@@ -73,4 +78,12 @@ main {
 }
 .artistPlaylist {
   padding: 10% 0;
+}
+#playlist li {
+  margin-bottom: 10px;
+}
+#playlist li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--second-color);
 }

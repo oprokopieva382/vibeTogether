@@ -31,19 +31,19 @@ const onSubmitArtistBio = (e) => {
   }
 };
 
-export const displayArtistImgAndStatistic = (result) => {
-  name.textContent = result.name;
+const displayArtistImgAndStatistic = (result) => {
+  artistNameToDisplay.textContent = result.name;
   artistImg.src = result.picture_medium;
   nbOfAlbum.textContent = `${result.nb_album} albums`;
-  two.textContent = `${result.nb_fan} fans`;
+  nbOfFans.textContent = `${result.nb_fan} fans`;
 };
 
-export const displayArtistPlaylists = (result) => {
+const displayArtistPlaylists = (result) => {
   let lists = result.data;
 
   playlist.innerHTML = "";
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < lists.length; i++) {
     const listItem = document.createElement("li");
     listItem.textContent = lists[i].title;
 
@@ -57,18 +57,24 @@ export const displayArtistPlaylists = (result) => {
   }
 };
 
-export const displayArtistBio = (data)=> {
-  // !update with other api, existing hasn't real img
-  //artistBioImg.src = data.artist.image[1]
-  artistNameToDisplay.textContent = data.artist.name;
+const displayArtistBio = (data)=> {
   artistOnTour.textContent = `On tour: ${data.artist.ontour}`;
   artistPlayCount.textContent = `Play count: ${data.artist.stats.playcount}`;
   artistListeners.textContent = `Listeners: ${data.artist.stats.listeners}`;
   // !discuss to pick either content or summary
-  aboutTheArtistContent.textContent = data.artist.bio.summary;
+  aboutTheArtistContent.textContent = data.artist.bio.content;
+//   aboutTheArtistContent.textContent = data.artist.bio.summary;
 }
 const queryParams = ["artistName=Drake"];
 
-willUpdateIdFormButton.addEventListener("click", onSubmitArtistBio);
-//getEventData(queryParams)//here temporary, in use now for see data response in console
-//getArtistBio("Drake");//here temporary, in use now for see data response in console
+//willUpdateIdFormButton.addEventListener("click", onSubmitArtistBio);
+
+//!here temporary, in use now for see data response in console
+//getEventData(queryParams)
+//getArtistBio("Drake");
+
+export {
+  displayArtistBio,
+  displayArtistPlaylists,
+  displayArtistImgAndStatistic,
+};
