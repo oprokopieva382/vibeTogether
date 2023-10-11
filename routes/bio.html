@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibeogether</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <!-- Nav -->
+    <header class="bg-gray-900 grid grid-cols-3 gap-18">
+        <h1 class="logo justify-self-start text-base m-1 ml-10">VibeTogether</h1>
+      <nav class="nav place-self-center ">
+        <button class="text-white font-bold px-6 py-6" type="button">EVENTS</button>
+        <button class="text-white font-bold px-6 py-6" type="button">ARTIST BIO</button>
+      </nav>
+    </header>
+    <div class="text-center mt-5">
+      <input type="text" id="bioSearch" class="w-60 p-2"/>
+      <button id="bioBtn" class="border-b-2 bg-gray-300 p-2">Search</button>
+    </div>
+    <!-- Error feedback -->
+    <p id="errorFeedback"></p>
+    <!-- top artist -->
+    <div class="top-artist"></div>
+  </body>
+</html>   
