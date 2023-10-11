@@ -42,6 +42,28 @@ const getEventData = async (queryParams) => {
   }
 };
 
-getArtistBio("Drake")
+//function request for artist, will be used in others function to display artist image by id, playlist and statistic
+const getSearchArtist = async (name) => {
+  const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${name}`;
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "7177f9d24dmshc99e2055266d247p15bed2jsn7a7887510ed1",
+      "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+    },
+  };
 
-export { getArtistBio, getEventData };
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// !temporary, wait for form to be ready
+//getArtistBio("Drake")
+//getSearchArtist("Drake");
+
+export { getArtistBio, getEventData, getSearchArtist };

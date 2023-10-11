@@ -1,4 +1,4 @@
-import { getArtistBio, getEventData } from "./restAPI.js";
+import { getArtistBio, getEventData, getSearchArtist } from "./restAPI.js";
 
 const willUpdateFromInput = document.getElementById("willUpdateFromInput");
 const willUpdateIdFormButton = document.getElementById(
@@ -25,6 +25,7 @@ const onSubmitArtistBio = (e) => {
   } else {
     willUpdateErrorForm.textContent = "";
     //getArtistBio(name)
+    //getSearchArtist(name)
   }
 };
 
