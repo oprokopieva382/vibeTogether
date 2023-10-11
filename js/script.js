@@ -5,7 +5,7 @@ const willUpdateIdFormButton = document.getElementById(
   "willUpdateIdFormButton"
 );
 const willUpdateErrorForm = document.getElementById("willUpdateErrorForm");
-const artistBioImg = document.getElementById("artistBioImg");
+const artistImg = document.getElementById("artistImg");
 const artistNameToDisplay = document.getElementById("artistNameToDisplay");
 const artistOnTour = document.getElementById("artistOnTour");
 const artistPlayCount = document.getElementById("artistPlayCount");
@@ -13,6 +13,8 @@ const artistListeners = document.getElementById("artistListeners");
 const aboutTheArtistContent = document.getElementById("aboutTheArtistContent");
 const nbOfAlbum = document.getElementById("nbOfAlbum");
 const nbOfFans = document.getElementById("nbOfFans");
+const audioPlayer = document.getElementById("audioPlayer");
+const playlist = document.getElementById("playlist");
 
 //function to handle event from artist bio form, call getArtistBio request
 const onSubmitArtistBio = (e) => {
@@ -26,6 +28,32 @@ const onSubmitArtistBio = (e) => {
     willUpdateErrorForm.textContent = "";
     //getArtistBio(name)
     //getSearchArtist(name)
+  }
+};
+
+export const displayArtistImgAndStatistic = (result) => {
+  name.textContent = result.name;
+  artistImg.src = result.picture_medium;
+  nbOfAlbum.textContent = `${result.nb_album} albums`;
+  two.textContent = `${result.nb_fan} fans`;
+};
+
+export const displayArtistPlaylists = (result) => {
+  let lists = result.data;
+
+  playlist.innerHTML = "";
+
+  for (let i = 0; i < 10; i++) {
+    const listItem = document.createElement("li");
+    listItem.textContent = lists[i].title;
+
+    // Add an event listener to play the associated track when clicked
+    listItem.addEventListener("click", () => {
+      audioPlayer.src = lists[i].preview;
+      audioPlayer.play();
+    });
+
+    playlist.appendChild(listItem);
   }
 };
 
