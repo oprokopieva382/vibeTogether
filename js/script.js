@@ -11,6 +11,8 @@ const artistOnTour = document.getElementById("artistOnTour");
 const artistPlayCount = document.getElementById("artistPlayCount");
 const artistListeners = document.getElementById("artistListeners");
 const aboutTheArtistContent = document.getElementById("aboutTheArtistContent");
+const nbOfAlbum = document.getElementById("nbOfAlbum");
+const nbOfFans = document.getElementById("nbOfFans");
 
 //function to handle event from artist bio form, call getArtistBio request
 const onSubmitArtistBio = (e) => {
