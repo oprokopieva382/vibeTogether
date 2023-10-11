@@ -1,9 +1,19 @@
 import { getArtistBio, getEventData, getSearchArtist } from "./restAPI.js";
 
 const willUpdateFromInput = document.getElementById("willUpdateFromInput");
-const willUpdateIdFormButton = document.getElementById(
-  "willUpdateIdFormButton"
+const willUpdateArtistBioFormButton = document.getElementById(
+  "willUpdateArtistBioFormButton"
 );
+const willUpdateEventsFormButton = document.getElementById(
+  "willUpdateEventsFormButton"
+);
+const willUpdateArtistNameEventForm = document.getElementById(
+  "willUpdateArtistNameEventForm"
+);
+const willUpdateEventTypeForm = document.getElementById(
+  "willUpdateEventTypeForm"
+);
+
 const willUpdateErrorForm = document.getElementById("willUpdateErrorForm");
 const artistImg = document.getElementById("artistImg");
 const artistNameToDisplay = document.getElementById("artistNameToDisplay");
@@ -15,21 +25,6 @@ const nbOfAlbum = document.getElementById("nbOfAlbum");
 const nbOfFans = document.getElementById("nbOfFans");
 const audioPlayer = document.getElementById("audioPlayer");
 const playlist = document.getElementById("playlist");
-
-//function to handle event from artist bio form, call getArtistBio request
-const onSubmitArtistBio = (e) => {
-  e.preventDefault();
-
-  const name = willUpdateFromInput.value.trim();
-
-  if (name === "") {
-    willUpdateErrorForm.textContent = "Please enter a valid name";
-  } else {
-    willUpdateErrorForm.textContent = "";
-    //getArtistBio(name)
-    //getSearchArtist(name)
-  }
-};
 
 const displayArtistImgAndStatistic = (result) => {
   artistNameToDisplay.textContent = result.name;
@@ -57,19 +52,51 @@ const displayArtistPlaylists = (result) => {
   }
 };
 
-const displayArtistBio = (data)=> {
+const displayArtistBio = (data) => {
   artistOnTour.textContent = `On tour: ${data.artist.ontour}`;
   artistPlayCount.textContent = `Play count: ${data.artist.stats.playcount}`;
   artistListeners.textContent = `Listeners: ${data.artist.stats.listeners}`;
-  // !discuss to pick either content or summary
   aboutTheArtistContent.textContent = data.artist.bio.content;
-//   aboutTheArtistContent.textContent = data.artist.bio.summary;
-}
-const queryParams = ["artistName=Drake"];
+};
 
-//willUpdateIdFormButton.addEventListener("click", onSubmitArtistBio);
+//function to handle event from artist bio form, call getArtistBio request
+const onSubmitArtistBio = (e) => {
+  e.preventDefault();
+
+  const name = willUpdateFromInput.value.trim();
+
+  if (name === "") {
+    willUpdateErrorForm.textContent = "Please enter a valid name";
+  } else {
+    willUpdateErrorForm.textContent = "";
+    //getArtistBio(name)
+    //getSearchArtist(name)
+  }
+};
+
+//function to handle event from event form, call getEventData request
+const onSubmitEvent = (e) => {
+  e.preventDefault();
+  let artistName = willUpdateArtistNameEventForm.value.trim();
+  let eventType = willUpdateEventTypeForm.value.trim();
+
+  const queryParams = [];
+
+  if (artistName) {
+    queryParams.push(`artistName=${encodeURIComponent(artistName)}`);
+  }
+  if (eventType) {
+    queryParams.push(`eventType=${encodeURIComponent(eventType)}`);
+  }
+
+  //getEventData(queryParams);
+};
+
+//willUpdateArtistBioFormButton.addEventListener("click", onSubmitArtistBio);
+//willUpdateEventsFormButton.addEventListener("click", onSubmitEvent);
 
 //!here temporary, in use now for see data response in console
+const queryParams = ["artistName=Drake"];
 //getEventData(queryParams)
 //getArtistBio("Drake");
 
