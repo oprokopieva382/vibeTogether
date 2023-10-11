@@ -6,6 +6,7 @@
 * {
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 body {
   margin: 0;
@@ -34,7 +35,7 @@ h4 {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
 }
 .logo {
   text-align: center;
@@ -79,6 +80,7 @@ main {
 .artistPlaylist {
   padding: 10% 0;
 }
+
 #playlist li {
   margin-bottom: 10px;
 }
@@ -87,3 +89,4 @@ main {
   cursor: pointer;
   color: var(--second-color);
 }
+

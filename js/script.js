@@ -26,6 +26,19 @@ const nbOfFans = document.getElementById("nbOfFans");
 const audioPlayer = document.getElementById("audioPlayer");
 const playlist = document.getElementById("playlist");
 
+var eventsBtn = document.querySelector("#eventsBtn");
+var eventsModal = document.querySelector("#events-modal");
+var eventsModalBg = document.querySelector("#events-modal-bg");
+
+// Event listeners
+eventsBtn.addEventListener("click", function(event) {
+    eventsModal.classList.add("is-active");
+});
+
+eventsModalBg.addEventListener("click", function(event) {
+    eventsModal.classList.remove("is-active");
+});
+
 const displayArtistImgAndStatistic = (result) => {
   artistNameToDisplay.textContent = result.name;
   artistImg.src = result.picture_medium;

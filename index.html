@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>VibeTogether</title>
-  </head>
-  <body>
-    <!-- main page -->
-    <main>
-      <!-- Header with nav bar -->
-      <header>
-        <nav class="nav flex justify-center">
-          <button class="text-white font-bold px-6 py-6" type="button">
-            EVENTS
-          </button>
-          <button class="text-white font-bold px-6 py-6" type="button">
-            ARTIST BIO
-          </button>
-        </nav>
-      </header>
-      <video autoplay muted loop id="background-video">
-        <source src="./assets/video/syren.mp4" type="video/mp4" />
-      </video>
-      <section class="logoSection">
-        <h1 class="logo">VibeTogether</h1>
-      </section>
-    </main>
-    <!-- hidden artist bio section -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <!-- Bulma link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>VibeTogether</title>
+</head>
+
+<body>
+  <!-- main page -->
+  <main>
+    <!-- Header with nav bar -->
+    <header>
+      <nav class="nav flex justify-center">
+        <button class="text-white font-bold px-6 py-6" type="button" id="eventsBtn">
+          EVENTS
+        </button>
+        <button class="text-white font-bold px-6 py-6" type="button" id="artistBioBtn">
+          ARTIST BIO
+        </button>
+      </nav>
+    </header>
+    <video autoplay muted loop id="background-video">
+      <source src="./assets/video/syren.mp4" type="video/mp4" />
+    </video>
+    <section class="logoSection">
+      <h1 class="logo">VibeTogether</h1>
+    </section>
+  </main>
+ <!-- hidden artist bio section -->
     <section id="artistBio" class="artistBio">
       <span id="errorMessage" class="errorMessage"></span>
       <div class="artistStats">
@@ -57,7 +54,172 @@
         <h1>ABOUT THE ARTIST</h1>
         <p class="aboutTheArtistContent" id="aboutTheArtistContent"></p>
       </div>
-    </section>
-    <script type="module" src="./js/script.js"></script>
-  </body>
+
+  <!-- modal -->
+  <div class="modal" id="events-modal">
+    <div class="modal-background" id="events-modal-bg"></div>
+    <div class="modal-content has-background-white py-5 px-5">
+      <h3 class="has-text-centered">Looking for somewhere to vibe at?</h3>
+      <form>
+        <!-- text input field -->
+        <div class="field">
+          <label class="label">Artist Name</label>
+          <div class="control">
+            <input type="text" class="input" placeholder="Artist Name">
+          </div>
+        </div>
+        <!-- container -->
+        <div class="container">
+          <div class="columns">
+            <!-- First Column for "Event Type" and Radio Buttons -->
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">Type</label>
+                <div class="control">
+                  <div class="field">
+                    <label class="radio">
+                      <input type="radio" name="type">
+                      Concerts
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio">
+                      <input type="radio" name="type">
+                      Festivals
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Second Column for Dropdowns -->
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">Genre</label>
+                <div class="control">
+                  <div class="select is-dark">
+                    <select>
+                      <option>bluegrass</option>
+                      <option>blues</option>
+                      <option>christian</option>
+                      <option>classical</option>
+                      <option>country-music</option>
+                      <option>edm</option>
+                      <option>folk</option>
+                      <option>hip-hop-rap</option>
+                      <option>indie</option>
+                      <option>jamband</option>
+                      <option>jazz</option>
+                      <option>latin</option>
+                      <option>metal</option>
+                      <option>pop</option>
+                      <option>punk</option>
+                      <option>reggae</option>
+                      <option>rhythm-and-blues-soul</option>
+                      <option>rock</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">State</label>
+                <div class="control">
+                  <div class="select is-dark">
+                    <select>
+                      <option>US-AL</option>
+                      <option>US-AK</option>
+                      <option>US-AZ</option>
+                      <option>US-AR</option>
+                      <option>US-CA</option>
+                      <option>US-CO</option>
+                      <option>US-CT</option>
+                      <option>US-DE</option>
+                      <option>US-FL</option>
+                      <option>US-GA</option>
+                      <option>US-HI</option>
+                      <option>US-ID</option>
+                      <option>US-IL</option>
+                      <option>US-IN</option>
+                      <option>US-IA</option>
+                      <option>US-KS</option>
+                      <option>US-KY</option>
+                      <option>US-LA</option>
+                      <option>US-ME</option>
+                      <option>US-MD</option>
+                      <option>US-MA</option>
+                      <option>US-MI</option>
+                      <option>US-MN</option>
+                      <option>US-MS</option>
+                      <option>US-MO</option>
+                      <option>US-MT</option>
+                      <option>US-NE</option>
+                      <option>US-NV</option>
+                      <option>US-NH</option>
+                      <option>US-NJ</option>
+                      <option>US-NM</option>
+                      <option>US-NY</option>
+                      <option>US-NC</option>
+                      <option>US-ND</option>
+                      <option>US-OH</option>
+                      <option>US-OK</option>
+                      <option>US-OR</option>
+                      <option>US-PA</option>
+                      <option>US-RI</option>
+                      <option>US-SC</option>
+                      <option>US-SD</option>
+                      <option>US-TN</option>
+                      <option>US-TX</option>
+                      <option>US-UT</option>
+                      <option>US-VT</option>
+                      <option>US-VA</option>
+                      <option>US-WA</option>
+                      <option>US-WV</option>
+                      <option>US-WI</option>
+                      <option>US-WY</option>
+                      <option>US-DC</option>
+                      <option>US-AS</option>
+                      <option>US-GU</option>
+                      <option>US-MP</option>
+                      <option>US-PR</option>
+                      <option>US-UM</option>
+                      <option>US-VI</option>
+                      <option>AU-ACT</option>
+                      <option>AU-NSW</option>
+                      <option>AU-NT</option>
+                      <option>AU-QLD</option>
+                      <option>AU-SA</option>
+                      <option>AU-TAS</option>
+                      <option>AU-VIC</option>
+                      <option>AU-WA</option>
+                      <option>CA-AB</option>
+                      <option>CA-BC</option>
+                      <option>CA-MB</option>
+                      <option>CA-NB</option>
+                      <option>CA-NL</option>
+                      <option>CA-NS</option>
+                      <option>CA-NT</option>
+                      <option>CA-NU</option>
+                      <option>CA-ON</option>
+                      <option>CA-PE</option>
+                      <option>CA-QC</option>
+                      <option>CA-SK</option>
+                      <option>CA-YT</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 has-text-centered">
+          <button class="button is-primary">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script type="module" src="./js/script.js"></script>
+</body>
+
 </html>
