@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/events.css" />
     <!-- Bulma link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>VibeTogether</title>
@@ -15,12 +16,12 @@
 <body>
 
     <header class="flex" id="header-bg">
-        <div style="width: 39vw; margin-top: 3vh; margin-left: 2vw;">
+        <div id="button-container">
             <button class="logo justify-self-start">VibeTogether</button>
         </div>
         <nav class="nav flex justify-center">
             <button class="text-white font-bold px-6 py-6" type="button" id="eventsBtn">
-                <a href="../index.html" style="color: whitesmoke;">HOME</a>
+                <a href="../index.html">HOME</a>
             </button>
             <button class="text-white font-bold px-6 py-6" type="button" id="artistBioBtn">
                 ARTIST BIO
@@ -28,9 +29,9 @@
         </nav>
     </header>
 
-    <h1 class="title is-1 is-underlined has-text-centered mt-3" style="color: whitesmoke;">Events</h1>
+    <h1 class="title is-1 is-underlined has-text-centered mt-3">Events</h1>
 
-    <div class="container mt-6" style="margin-left: 17vw;">
+    <div class="container mt-6">
 
         <!-- Event list (one event per card, dynamically populated)-->
         <div class="card mb-6">
@@ -39,7 +40,7 @@
                 <p>Drake at House of Blues</p>
                 <p>House of Blues</p>
             </div>
-            <header class="card-header p-2" style="background-color: lightgray;">Drake, Meek Mill, Madonna</header>
+            <header class="card-header p-2 has-background-grey-lighter">Drake, Meek Mill, Madonna</header>
         </div>
 
 

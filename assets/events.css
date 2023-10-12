@@ -1,0 +1,29 @@
+:root {
+    --main-color: #0f102a;
+    --second-color: #b0b7db;
+    --text-color: #fff;
+    --header-bg-color: #111827;
+}
+
+
+#button-container {
+    width: 39vw;
+    margin-top: 3vh;
+    margin-left: 2vw;
+}
+
+nav button a {
+    color: var(--text-color);
+}
+
+#header-bg {
+    background-color: var(--header-bg-color) !important;
+}
+
+h1 {
+    color: var(--text-color) !important;
+}
+
+.container {
+    margin-left: 17vw !important;
+}
