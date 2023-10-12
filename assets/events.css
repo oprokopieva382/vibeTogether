@@ -22,6 +22,16 @@ nav button a {
 
 h1 {
     color: var(--text-color) !important;
+    text-align: center !important;
+    /* Center the text */
+    border-bottom: 5px solid white !important;
+    /* Add a 1px solid black underline */
+    line-height: 0 !important;
+    /* Collapse any extra space above the text */
+    padding: 25px 0 !important;
+    /* Adjust the padding to control the underline's extension */
+    margin: 0 35vw !important;
+        
 }
 
 .container {
