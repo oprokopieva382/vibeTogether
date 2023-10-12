@@ -5,6 +5,9 @@
     --header-bg-color: #111827;
 }
 
+html {
+    background-color: var(--main-color) !important;
+}
 
 #button-container {
     width: 39vw;
@@ -31,7 +34,7 @@ h1 {
     padding: 25px 0 !important;
     /* Adjust the padding to control the underline's extension */
     margin: 0 35vw !important;
-        
+
 }
 
 .container {

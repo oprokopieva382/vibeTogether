@@ -9,10 +9,6 @@
   z-index: 1;
 }
 
-html {
-  background-color: var(--main-color)!important;
-}
-
 body {
   margin: 0;
   overflow: hidden;
