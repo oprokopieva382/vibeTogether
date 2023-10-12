@@ -1,34 +1,32 @@
-import { catchArtistBioError } from "./utils.js";
+import { catchArtistBioError, catchEventDataError } from "./utils.js";
 import {
   displayArtistBio,
   displayArtistPlaylists,
   displayArtistImgAndStatistic,
-} from "./script.js";
+} from "./artistBio.js";
 
 const artistBioAPI_KEY = "982540db251e7848a4ddaec3f121f25d";
 const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
 
-const errorMessage = document.getElementById("errorMessage");
-
 // function to get Artist Bio information
 const getArtistBio = async (name) => {
+ 
   try {
     const response = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${artistBioAPI_KEY}&format=json`
     );
-
     const data = await response.json();
     console.log(data);
+    errorMessage.textContent = "";
     catchArtistBioError(data);
     displayArtistBio(data);
   } catch (error) {
-    errorMessage.textContent = error.message;
     console.error(error.message);
   }
 };
 
 // function to get event data information with all needed params
-const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}`;
+const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}&geoCountryIso2=US`;
 const options = {
   method: "GET",
   headers: { Accept: "application/json" },
@@ -40,8 +38,11 @@ const getEventData = async (queryParams) => {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log(data);
+    catchEventDataError(data);
+    // !wait for html to be ready to run this function
+    //displayEventData(data);
   } catch (error) {
-    console.error(error);
+    console.error(error.message);
   }
 };
 
@@ -62,7 +63,7 @@ const getSearchArtist = async (name) => {
     displayArtistPlaylists(result);
     const id = result.data[0].artist.id;
     getArtistImgAndStatistic(id);
-    } catch (error) {
+  } catch (error) {
     console.error(error);
   }
 };
@@ -89,7 +90,7 @@ const getArtistImgAndStatistic = async (id) => {
 };
 
 // !temporary, wait for form to be ready
-getArtistBio("AC/DC")
-getSearchArtist("AC/DC");
+// getArtistBio("Taylor Swift");
+// getSearchArtist("Taylor Swift");
 
 export { getArtistBio, getEventData, getSearchArtist };

@@ -64,7 +64,7 @@ main {
   flex-wrap: wrap;
   gap: 5%;
   padding: 5%;
-  /* visibility: hidden; */
+  visibility: hidden;
   color: var(--text-color);
   overflow-y: scroll;
   max-height: 100vh;
