@@ -61,6 +61,7 @@
   main {
     /* display: none; */
     height: 100%;
+    flex: auto;
   }
   
   /* artistBioContent hidden section */
@@ -106,13 +107,21 @@
     padding: 8px;
 }
 
+header{
+    border-bottom: 2px inset #111827;
+}
   #top-artist{
- 
+    border: 5px  inset #111827;
+    background-color: #111827;
+    border-radius: 20px;
   }
 
   #findVibe{
-margin-left: 890px;
-font-size: xx-large;
+    margin-left: 890px;
+    font-size: xx-large;
 
   }
-  img {border: 5px solid #111827;}
+
+  img {
+    border: 2px inset #111827;
+}

@@ -22,7 +22,7 @@
     <!-- Nav -->
     <header class="bg-gray-900 flex items-center h-28">
         <a href="../index.html" class="logo justify-self-start m-1 ml-6 mb-4 mt-2">VibeTogether</a> 
-        <p id="findVibe" class="self-end">Find someone to vibe with</p>
+        <p id="findVibe" class="flex-auto -ml">Find someone to vibe with</p>
     </header>
 <div class="text-center mt-5">
       <input type="text" id="bioSearch" class="w-72 p-2"/>
@@ -30,49 +30,50 @@
     </div>
     <!-- Error feedback -->
     <p id="errorFeedback"></p>
-    <!-- top artist -->
+
 <main class="columns">
-    <aside class="column is-2 ml-2 text-center">
-      <h3 class="text-center text-xl border-b-4 text-white ">Recent Searches</h3>
-      <div class="flex flex-col">
-        <button class="top-artist-link text-center text-white text-3xl ">Taylor Swift</button>
-        <button class="top-artist-link text-center text-white text-3xl">Ariana Grande</button>
-        <button class="top-artist-link text-center text-white mt-2 text-3xl">Weeknd</button>
+  <!-- Search History -->
+    <aside class="column is-1 ml-3 text-center">
+      <h3 class="text-center text-3xl border-b-4 text-white ">Recent Searches</h3>
+      <div class="flex flex-col ">
+        <button class="top-artist-link text-center text-white mt-2 text-2xl">Taylor Swift</button>
+        <button class="top-artist-link text-center text-white mt-2 text-2xl">Ariana Grande</button>
+        <button class="top-artist-link text-center text-white mt-2 text-2xl">Weeknd</button>
       </div>
-      
-      
     </aside>
 
-    <div id="top-artist" class=" coloumn is-7 flex-1 grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10 ">
-      <div class="flex flex-col">
+    <!-- top artist -->
+    <div>
+    <div id="top-artist" class="mt-10 coloumn is-9 py-12 flex grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10 ">
+      <div class="flex flex-col mx-28">
         <figure class="image is-square h-72 w-72">
           <img src="../assets/images/tswift.jpg" class="is-rounded bg-white">
         </figure>
         <button class="top-artist-link text-center text-white text-3xl">Taylor Swift</button>
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col mx-28">
         <figure class="image is-square h-72 w-72">
         <img src="../assets/images/week.jpg" class="is-rounded  bg-white"></figure>
         <button class="top-artist-link text-center text-white mt-2 text-3xl">Weeknd</button>
       </div>
-      <div class="flex flex-col"><figure class="image is-square h-72 w-72">
+      <div class="flex flex-col  mx-28"><figure class="image is-square h-72 w-72">
         <img src="../assets/images/ed.jpg" class="is-rounded  bg-white"></figure>
         <button class="top-artist-link text-center text-white mt-2 text-3xl">Ed Sheeran</button>
       </div>
-      <div class="flex flex-col"><figure class="image is-square h-72 w-72 ">
+      <div class="flex flex-col mx-28"><figure class="image is-square h-72 w-72 ">
         <img src="../assets/images/drake.jpg" class="is-rounded  bg-white"></figure>
         <button class="top-artist-link text-center text-white mt-2 text-3xl">Drake</button>
       </div>
-      <div class="flex flex-col"><figure class="image is-square h-72 w-72">
+      <div class="flex flex-col mx-28"><figure class="image is-square h-72 w-72">
         <img src="../assets/images/ari.jpg" class="is-rounded  bg-white"></figure>
         <button class="top-artist-link text-center text-white mt-2 text-3xl">Ariana Grande</button>
       </div>
-      <div class="flex flex-col"><figure class="image is-square h-72 w-72">
+      <div class="flex flex-col mx-28"><figure class="image is-square h-72 w-72">
         <img src="../assets/images/marshal.jpg" class="is-rounded  bg-white"></figure>
         <button class="top-artist-link text-center text-white mt-2 text-3xl">Eminem</button>
       </div>
     </div>
-
+  </div>
     <!-- hidden artist bio section -->
     <section id="artistBio" class="artistBio">
       <span id="errorMessage" class="errorMessage"></span>
