@@ -55,7 +55,7 @@ const onSubmitArtistBio = (e) => {
   e.preventDefault();
 
   const name = bioSearchNameOfArtist.value.trim();
-  console.log(name)
+  console.log(name);
 
   if (name === "") {
     errorFeedback.textContent = "Please enter a valid name";
@@ -66,7 +66,7 @@ const onSubmitArtistBio = (e) => {
   }
 };
 
-artistBioButton.addEventListener("click", onSubmitArtistBio);
+artistBioButton?.addEventListener("click", onSubmitArtistBio);
 
 export {
   displayArtistBio,
