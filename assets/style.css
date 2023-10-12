@@ -1,7 +1,8 @@
 :root {
   --main-color: #0f102a; 
   --second-color: #b0b7db;
-  --text-color:#fff
+  --text-color:#fff;
+  --header-bg-color: #111827;
 }
 * {
   margin: 0;
@@ -97,3 +98,6 @@ main {
   color: var(--second-color);
 }
 
+#header-bg {
+  background-color: var(--header-bg-color) !important;
+}
