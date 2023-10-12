@@ -1,15 +1,17 @@
 //let error = document.getElementById("eventError")
+const errorMessage = document.getElementById("errorFeedback");
 const catchArtistBioError = (data) => {
   if (data.error) {
-    throw new Error(data.message);
+    errorMessage.textContent = data.message;
   }
 };
 
 const catchEventDataError = (data) => {
   if (!data.events.length) {
-    error.textContent = "Looks like your artist do not have upcoming events or check if you type name right"
+    error.textContent =
+      "Looks like your artist do not have upcoming events or check if you type name right";
   } else {
-    error.textContent = ""
+    error.textContent = "";
   }
 };
 

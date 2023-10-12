@@ -8,10 +8,9 @@ import {
 const artistBioAPI_KEY = "982540db251e7848a4ddaec3f121f25d";
 const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
 
-const errorMessage = document.getElementById("errorFeedback");
-
 // function to get Artist Bio information
 const getArtistBio = async (name) => {
+ 
   try {
     const response = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${artistBioAPI_KEY}&format=json`
@@ -22,7 +21,6 @@ const getArtistBio = async (name) => {
     catchArtistBioError(data);
     displayArtistBio(data);
   } catch (error) {
-    errorMessage.textContent = error.message;
     console.error(error.message);
   }
 };
@@ -92,7 +90,7 @@ const getArtistImgAndStatistic = async (id) => {
 };
 
 // !temporary, wait for form to be ready
-//getArtistBio("AC/DC")
-//getSearchArtist("AC/DC");
+getArtistBio("Taylor Swift");
+getSearchArtist("Taylor Swift");
 
 export { getArtistBio, getEventData, getSearchArtist };

@@ -1,16 +1,18 @@
 import { getArtistBio, getEventData, getSearchArtist } from "./restAPI.js";
 
-const willUpdateFromInput = document.getElementById("willUpdateFromInput");
-const willUpdateArtistBioFormButton = document.getElementById(
-  "willUpdateArtistBioFormButton"
-);
+const home = document.getElementById("home");
+console.log(home)
+const bioSearchNameOfArtist = document.getElementById("bioSearch");
+console.log(bioSearchNameOfArtist);
+const artistBioButton = document.getElementById("bioBtn");
+console.log(artistBioButton);
 const searchEventButton = document.getElementById("searchEventButton");
 const willUpdateArtistTitleFromDefaultBioPage = document.getElementById(
   "willUpdateArtistTitleFromDefaultBioPage"
 );
 const topArtist = document.getElementById("topArtist");
 
-const willUpdateErrorForm = document.getElementById("willUpdateErrorForm");
+const errorFeedback = document.getElementById("errorFeedback");
 const artistImg = document.getElementById("artistImg");
 const artistNameToDisplay = document.getElementById("artistNameToDisplay");
 const artistOnTour = document.getElementById("artistOnTour");
@@ -22,6 +24,7 @@ const nbOfFans = document.getElementById("nbOfFans");
 const audioPlayer = document.getElementById("audioPlayer");
 const playlist = document.getElementById("playlist");
 const artistBioBtn = document.getElementById("artistBioBtn");
+console.log(artistBioBtn);
 
 const eventsBtn = document.querySelector("#eventsBtn");
 const eventsModal = document.querySelector("#events-modal");
@@ -29,6 +32,10 @@ const eventsModalBg = document.querySelector("#events-modal-bg");
 
 const openArtistBioSearchDefaultPage = () => {
   document.location.replace("../routes/bio.html");
+};
+
+const homePageRedirect = () => {
+  document.location.replace("../index.html");
 };
 
 const showDefaultTopArtist = () => {
@@ -74,12 +81,12 @@ const displayArtistBio = (data) => {
 const onSubmitArtistBio = (e) => {
   e.preventDefault();
 
-  const name = willUpdateFromInput.value.trim();
+  const name = bioSearchNameOfArtist.value.trim();
 
   if (name === "") {
-    willUpdateErrorForm.textContent = "Please enter a valid name";
+    errorFeedback.textContent = "Please enter a valid name";
   } else {
-    willUpdateErrorForm.textContent = "";
+    errorFeedback.textContent = "";
     //getArtistBio(name)
     //getSearchArtist(name)
   }
@@ -89,7 +96,9 @@ const onSubmitArtistBio = (e) => {
 const onSubmitEvent = (e) => {
   e.preventDefault();
 
-  const valueOfArtistName = document.getElementById("valueOfArtistName").value.trim();
+  const valueOfArtistName = document
+    .getElementById("valueOfArtistName")
+    .value.trim();
   const genreSelect = document.getElementById("genreSelect").value;
   const usStates = document.getElementById("usStates").value;
   const valueOfEventType = document.querySelector("input[name='type']:checked");
@@ -109,7 +118,7 @@ const onSubmitEvent = (e) => {
     queryParams.push(`geoStateIso=${encodeURIComponent(usStates)}`);
   }
 
-getEventData(queryParams);
+  getEventData(queryParams);
 };
 
 artistBioBtn.addEventListener("click", openArtistBioSearchDefaultPage);
@@ -123,13 +132,9 @@ eventsModalBg.addEventListener("click", () => {
 });
 
 //willUpdateArtistTitleFromDefaultBioPage.onclick = showDefaultTopArtist;
-//willUpdateArtistBioFormButton.addEventListener("click", onSubmitArtistBio);
+artistBioButton.addEventListener("click", onSubmitArtistBio);
 searchEventButton.addEventListener("click", onSubmitEvent);
-
-//!here temporary, in use now for see data response in console
-//const queryParams = ["artistName=Drake"];
-//getEventData(queryParams)
-//getArtistBio("Drake");
+home.addEventListener("click", homePageRedirect);
 
 export {
   displayArtistBio,
