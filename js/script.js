@@ -2,9 +2,9 @@ import { getEventData } from "./restAPI.js";
 
 const valueOfArtistName = document
   .getElementById("valueOfArtistName")
-  .value.trim();
-const genreSelect = document.getElementById("genreSelect").value;
-const usStates = document.getElementById("usStates").value;
+  ?.value.trim();
+const genreSelect = document.getElementById("genreSelect")?.value;
+const usStates = document.getElementById("usStates")?.value;
 const valueOfEventType = document.querySelector("input[name='type']:checked");
 
 const searchEventButton = document.getElementById("searchEventButton");
@@ -12,7 +12,6 @@ const searchEventButton = document.getElementById("searchEventButton");
 const errorFeedback = document.getElementById("errorFeedback");
 
 const eventsBtn = document.querySelector("#eventsBtn");
-console.log(eventsBtn);
 const eventsModal = document.querySelector("#events-modal");
 const eventsModalBg = document.querySelector("#events-modal-bg");
 
@@ -38,13 +37,13 @@ const onSubmitEvent = (e) => {
   getEventData(queryParams);
 };
 
-searchEventButton.addEventListener("click", onSubmitEvent);
+searchEventButton?.addEventListener("click", onSubmitEvent);
 
 // Event listeners for modal
-eventsBtn.addEventListener("click", () => {
+eventsBtn?.addEventListener("click", () => {
   eventsModal.classList.add("is-active");
 });
 
-eventsModalBg.addEventListener("click", () => {
+eventsModalBg?.addEventListener("click", () => {
   eventsModal.classList.remove("is-active");
 });

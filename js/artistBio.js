@@ -1,6 +1,7 @@
 import { getArtistBio, getSearchArtist } from "./restAPI.js";
 
 const artistBioSection = document.getElementById("artistBio");
+const topArtistsSection = document.getElementById("topArtistsSection");
 const artistOnTour = document.getElementById("artistOnTour");
 const artistPlayCount = document.getElementById("artistPlayCount");
 const artistListeners = document.getElementById("artistListeners");
@@ -16,7 +17,9 @@ const bioSearchNameOfArtist = document.getElementById("bioSearch");
 
 const displayArtistBio = (data) => {
   console.log(data);
-  artistBioSection.style.visibility = "visible";
+  topArtistsSection.style.display = "none";
+  artistBioSection.style.display = "flex";
+  bioSearchNameOfArtist.value = ""
 
   artistOnTour.textContent = `On tour: ${data.artist.ontour}`;
   artistPlayCount.textContent = `Play count: ${data.artist.stats.playcount}`;

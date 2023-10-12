@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class=>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,20 +13,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../assets/bioStyle.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
   </head>
-  
   <body>
-
     <!-- Nav -->
     <header class="bg-gray-900 flex items-center h-28">
-        <a href="../index.html" class="logo justify-self-start m-1 ml-6 mb-4 mt-2">VibeTogether</a> 
-        <p id="findVibe" class="flex-auto -ml">Find someone to vibe with</p>
+      <a href="../index.html" class="logo justify-self-start m-1 ml-6 mb-4 mt-2"
+        >VibeTogether</a
+      >
+      <p id="findVibe" class="flex-auto -ml">Find someone to vibe with</p>
     </header>
-<div class="text-center mt-5">
-      <input type="text" id="bioSearch" class="w-72 p-2"/>
-      <button id="bioBtn" class=" bg-gray-300">Search</button>
+    <div class="text-center mt-5">
+      <input type="text" id="bioSearch" class="w-72 p-2" />
+      <button id="bioBtn" class="bg-gray-300">Search</button>
     </div>
     <!-- hidden artist bio section -->
     <section id="artistBio" class="artistBio">
@@ -53,53 +55,87 @@
     </section>
     <!-- Error feedback -->
     <p id="errorFeedback"></p>
-
-<main class="columns">
-  <!-- Search History -->
-    <aside class="column is-1 ml-3 text-center">
-      <h3 class="text-center text-3xl border-b-4 text-white ">Recent Searches</h3>
-      <div class="flex flex-col ">
-        <button class="top-artist-link text-center text-white mt-2 text-2xl">Taylor Swift</button>
-        <button class="top-artist-link text-center text-white mt-2 text-2xl">Ariana Grande</button>
-        <button class="top-artist-link text-center text-white mt-2 text-2xl">Weeknd</button>
+    <main class="columns" id="topArtistsSection">
+      <!-- Search History -->
+      <aside class="column is-1 ml-3 text-center">
+        <h3 class="text-center text-3xl border-b-4 text-white">
+          Recent Searches
+        </h3>
+        <div class="flex flex-col">
+          <button class="top-artist-link text-center text-white mt-2 text-2xl">
+            Taylor Swift
+          </button>
+          <button class="top-artist-link text-center text-white mt-2 text-2xl">
+            Ariana Grande
+          </button>
+          <button class="top-artist-link text-center text-white mt-2 text-2xl">
+            Weeknd
+          </button>
+        </div>
+      </aside>
+      <!-- top artist -->
+      <div
+        id="top-artist"
+        class="mt-10 coloumn is-9 py-12 flex grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10"
+      >
+        <div class="flex flex-col mx-28">
+          <figure class="image is-square h-72 w-72">
+            <img
+              src="../assets/images/tswift.jpg"
+              class="is-rounded bg-white"
+            />
+          </figure>
+          <button class="top-artist-link text-center text-white text-3xl">
+            Taylor Swift
+          </button>
+        </div>
+        <div class="flex flex-col mx-28">
+          <figure class="image is-square h-72 w-72">
+            <img src="../assets/images/week.jpg" class="is-rounded bg-white" />
+          </figure>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">
+            Weeknd
+          </button>
+        </div>
+        <div class="flex flex-col mx-28">
+          <figure class="image is-square h-72 w-72">
+            <img src="../assets/images/ed.jpg" class="is-rounded bg-white" />
+          </figure>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">
+            Ed Sheeran
+          </button>
+        </div>
+        <div class="flex flex-col mx-28">
+          <figure class="image is-square h-72 w-72">
+            <img src="../assets/images/drake.jpg" class="is-rounded bg-white" />
+          </figure>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">
+            Drake
+          </button>
+        </div>
+        <div class="flex flex-col mx-28">
+          <figure class="image is-square h-72 w-72">
+            <img src="../assets/images/ari.jpg" class="is-rounded bg-white" />
+          </figure>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">
+            Ariana Grande
+          </button>
+        </div>
+        <div class="flex flex-col mx-28">
+          <figure class="image is-square h-72 w-72">
+            <img
+              src="../assets/images/marshal.jpg"
+              class="is-rounded bg-white"
+            />
+          </figure>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">
+            Eminem
+          </button>
+        </div>
       </div>
-    </aside>
-
-    <!-- top artist -->
-    <div>
-    <div id="top-artist" class="mt-10 coloumn is-9 py-12 flex grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10 ">
-      <div class="flex flex-col mx-28">
-        <figure class="image is-square h-72 w-72">
-          <img src="../assets/images/tswift.jpg" class="is-rounded bg-white">
-        </figure>
-        <button class="top-artist-link text-center text-white text-3xl">Taylor Swift</button>
-      </div>
-      <div class="flex flex-col mx-28">
-        <figure class="image is-square h-72 w-72">
-        <img src="../assets/images/week.jpg" class="is-rounded  bg-white"></figure>
-        <button class="top-artist-link text-center text-white mt-2 text-3xl">Weeknd</button>
-      </div>
-      <div class="flex flex-col  mx-28"><figure class="image is-square h-72 w-72">
-        <img src="../assets/images/ed.jpg" class="is-rounded  bg-white"></figure>
-        <button class="top-artist-link text-center text-white mt-2 text-3xl">Ed Sheeran</button>
-      </div>
-      <div class="flex flex-col mx-28"><figure class="image is-square h-72 w-72 ">
-        <img src="../assets/images/drake.jpg" class="is-rounded  bg-white"></figure>
-        <button class="top-artist-link text-center text-white mt-2 text-3xl">Drake</button>
-      </div>
-      <div class="flex flex-col mx-28"><figure class="image is-square h-72 w-72">
-        <img src="../assets/images/ari.jpg" class="is-rounded  bg-white"></figure>
-        <button class="top-artist-link text-center text-white mt-2 text-3xl">Ariana Grande</button>
-      </div>
-      <div class="flex flex-col mx-28"><figure class="image is-square h-72 w-72">
-        <img src="../assets/images/marshal.jpg" class="is-rounded  bg-white"></figure>
-        <button class="top-artist-link text-center text-white mt-2 text-3xl">Eminem</button>
-      </div>
-    </div>
-  </div>
-   </main>
+    </main>
     <script type="module" src="../js/script.js"></script>
     <script type="module" src="../js/artistBio.js"></script>
     <script type="module" src="../js/utils.js"></script>
   </body>
-</html>   
+</html>
