@@ -17,21 +17,45 @@
   </head>
   <body>
     <!-- Nav -->
-    <header class="bg-gray-900 grid grid-cols-3 gap-18" >
-        <h1 class="logo justify-self-start text-base m-1 ml-10" id="home">VibeTogether</h1>
-      <nav class="nav place-self-center ">
-        <button class="text-white font-bold px-6 py-6" type="button">EVENTS</button>
-        <button class="text-white font-bold px-6 py-6" type="button">ARTIST BIO</button>
-      </nav>
+    <header class="bg-gray-900 grid grid-cols-3 gap-18">
+      <a
+        href="../index.html"
+        class="logo justify-self-start text-base m-1 ml-10"
+        >VibeTogether</a
+      >
     </header>
     <div class="text-center mt-5">
-      <input type="text" id="bioSearch" class="w-60 p-2"/>
+      <input type="text" id="bioSearch" class="w-60 p-2" />
       <button id="bioBtn" class="border-b-2 bg-gray-300 p-2">Search</button>
     </div>
+    <!-- hidden artist bio section -->
+    <section id="artistBio" class="artistBio">
+      <span id="errorMessage" class="errorMessage"></span>
+      <div class="artistStats">
+        <img src="" alt="artist" class="artistImg" id="artistImg" />
+        <hr class="mb-2" />
+        <h2 id="artistNameToDisplay"></h2>
+        <hr class="mt-2" />
+        <h4 id="nbOfAlbum" class="mt-6"></h4>
+        <h4 id="nbOfFans"></h4>
+        <h4 id="artistOnTour"></h4>
+        <h4 id="artistListeners"></h4>
+        <h4 id="artistPlayCount"></h4>
+        <article class="artistPlaylist" id="audioContent">
+          <audio id="audioPlayer" controls></audio>
+          <ul id="playlist" class="mt-6"></ul>
+        </article>
+      </div>
+      <div class="aboutTheArtist">
+        <h1>ABOUT THE ARTIST</h1>
+        <p class="aboutTheArtistContent" id="aboutTheArtistContent"></p>
+      </div>
+    </section>
     <!-- Error feedback -->
     <p id="errorFeedback"></p>
     <!-- top artist -->
     <div class="top-artist"></div>
-    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/artistBio.js"></script>
+    <script type="module" src="../js/utils.js"></script>
   </body>
-</html>   
+</html>

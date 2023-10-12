@@ -3,7 +3,7 @@ import {
   displayArtistBio,
   displayArtistPlaylists,
   displayArtistImgAndStatistic,
-} from "./script.js";
+} from "./artistBio.js";
 
 const artistBioAPI_KEY = "982540db251e7848a4ddaec3f121f25d";
 const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
@@ -90,7 +90,7 @@ const getArtistImgAndStatistic = async (id) => {
 };
 
 // !temporary, wait for form to be ready
-getArtistBio("Taylor Swift");
-getSearchArtist("Taylor Swift");
+// getArtistBio("Taylor Swift");
+// getSearchArtist("Taylor Swift");
 
 export { getArtistBio, getEventData, getSearchArtist };
