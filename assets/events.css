@@ -37,3 +37,10 @@ h1 {
 .container {
     margin-left: 17vw !important;
 }
+
+.date {
+    border: 1px solid grey;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
