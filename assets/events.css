@@ -15,7 +15,7 @@ html {
     margin-left: 2vw;
 }
 
-nav button a {
+header button a {
     color: var(--text-color);
 }
 
