@@ -114,10 +114,11 @@ header{
     border: 5px  inset #111827;
     background-color: #111827;
     border-radius: 20px;
+flex-grow: 1;
   }
 
   #findVibe{
-    margin-left: 890px;
+    margin-left: 35%;
     font-size: xx-large;
 
   }
