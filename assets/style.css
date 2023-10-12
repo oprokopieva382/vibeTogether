@@ -59,7 +59,7 @@ main {
 
 /* artistBioContent hidden section */
 .artistBio {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 5%;
   padding: 5%;
@@ -91,4 +91,12 @@ main {
   cursor: pointer;
   color: var(--second-color);
 }
+ 
+.bioNav{
+  margin-left:  -299px;
+} 
 
+.top-artist{
+  min-width: 100%;
+  min-height: 100%;
+}
