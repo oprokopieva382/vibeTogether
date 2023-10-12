@@ -33,13 +33,12 @@
           >
             EVENTS
           </button>
-          <button
+          <a href="./routes/bio.html"
             class="text-white font-bold px-6 py-6"
-            type="button"
             id="artistBioBtn"
           >
             ARTIST BIO
-          </button>
+          </a>
         </nav>
       </header>
       <video autoplay muted loop id="background-video">
@@ -76,14 +75,14 @@
                   <label class="label">Type</label>
                   <div class="control">
                     <div class="field">
-                      <label class="radio">
-                        <input type="radio" name="type" class="radio has-text-black"/>
+                      <label class="radio has-text-black">
+                        <input type="radio" name="type"/>
                         Concerts
                       </label>
                     </div>
                     <div class="field">
-                      <label class="radio">
-                        <input type="radio" name="type" class="radio has-text-black"/>
+                      <label class="radio has-text-black">
+                        <input type="radio" name="type"/>
                         Festivals
                       </label>
                     </div>
@@ -213,7 +212,7 @@
             </div>
           </div>
           <div class="mt-6 has-text-centered">
-            <button class="button is-primary" id="searchEventButton">
+            <button class="button is-link" id="searchEventButton">
               Search
             </button>
           </div>
