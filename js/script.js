@@ -4,15 +4,11 @@ const willUpdateFromInput = document.getElementById("willUpdateFromInput");
 const willUpdateArtistBioFormButton = document.getElementById(
   "willUpdateArtistBioFormButton"
 );
-const willUpdateEventsFormButton = document.getElementById(
-  "willUpdateEventsFormButton"
+const searchEventButton = document.getElementById("searchEventButton");
+const willUpdateArtistTitleFromDefaultBioPage = document.getElementById(
+  "willUpdateArtistTitleFromDefaultBioPage"
 );
-const willUpdateArtistNameEventForm = document.getElementById(
-  "willUpdateArtistNameEventForm"
-);
-const willUpdateEventTypeForm = document.getElementById(
-  "willUpdateEventTypeForm"
-);
+const topArtist = document.getElementById("topArtist");
 
 const willUpdateErrorForm = document.getElementById("willUpdateErrorForm");
 const artistImg = document.getElementById("artistImg");
@@ -25,19 +21,21 @@ const nbOfAlbum = document.getElementById("nbOfAlbum");
 const nbOfFans = document.getElementById("nbOfFans");
 const audioPlayer = document.getElementById("audioPlayer");
 const playlist = document.getElementById("playlist");
+const artistBioBtn = document.getElementById("artistBioBtn");
 
-var eventsBtn = document.querySelector("#eventsBtn");
-var eventsModal = document.querySelector("#events-modal");
-var eventsModalBg = document.querySelector("#events-modal-bg");
+const eventsBtn = document.querySelector("#eventsBtn");
+const eventsModal = document.querySelector("#events-modal");
+const eventsModalBg = document.querySelector("#events-modal-bg");
 
-// Event listeners
-eventsBtn.addEventListener("click", function(event) {
-    eventsModal.classList.add("is-active");
-});
+const openArtistBioSearchDefaultPage = () => {
+  document.location.replace("../routes/bio.html");
+};
 
-eventsModalBg.addEventListener("click", function(event) {
-    eventsModal.classList.remove("is-active");
-});
+const showDefaultTopArtist = () => {
+  const name = willUpdateArtistTitleFromDefaultBioPage.textContent;
+  //getArtistBio(name)
+  //getSearchArtist(name)
+};
 
 const displayArtistImgAndStatistic = (result) => {
   artistNameToDisplay.textContent = result.name;
@@ -90,26 +88,46 @@ const onSubmitArtistBio = (e) => {
 //function to handle event from event form, call getEventData request
 const onSubmitEvent = (e) => {
   e.preventDefault();
-  let artistName = willUpdateArtistNameEventForm.value.trim();
-  let eventType = willUpdateEventTypeForm.value.trim();
+
+  const valueOfArtistName = document.getElementById("valueOfArtistName").value.trim();
+  const genreSelect = document.getElementById("genreSelect").value;
+  const usStates = document.getElementById("usStates").value;
+  const valueOfEventType = document.querySelector("input[name='type']:checked");
 
   const queryParams = [];
 
-  if (artistName) {
-    queryParams.push(`artistName=${encodeURIComponent(artistName)}`);
+  if (valueOfArtistName) {
+    queryParams.push(`artistName=${encodeURIComponent(valueOfArtistName)}`);
   }
-  if (eventType) {
-    queryParams.push(`eventType=${encodeURIComponent(eventType)}`);
+  if (valueOfEventType) {
+    queryParams.push(`eventType=${encodeURIComponent(valueOfEventType.value)}`);
+  }
+  if (genreSelect) {
+    queryParams.push(`genreSlug=${encodeURIComponent(genreSelect)}`);
+  }
+  if (usStates) {
+    queryParams.push(`geoStateIso=${encodeURIComponent(usStates)}`);
   }
 
-  //getEventData(queryParams);
+getEventData(queryParams);
 };
 
+artistBioBtn.addEventListener("click", openArtistBioSearchDefaultPage);
+// Event listeners for modal
+eventsBtn.addEventListener("click", () => {
+  eventsModal.classList.add("is-active");
+});
+
+eventsModalBg.addEventListener("click", () => {
+  eventsModal.classList.remove("is-active");
+});
+
+//willUpdateArtistTitleFromDefaultBioPage.onclick = showDefaultTopArtist;
 //willUpdateArtistBioFormButton.addEventListener("click", onSubmitArtistBio);
-//willUpdateEventsFormButton.addEventListener("click", onSubmitEvent);
+searchEventButton.addEventListener("click", onSubmitEvent);
 
 //!here temporary, in use now for see data response in console
-const queryParams = ["artistName=Drake"];
+//const queryParams = ["artistName=Drake"];
 //getEventData(queryParams)
 //getArtistBio("Drake");
 

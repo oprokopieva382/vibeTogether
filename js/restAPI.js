@@ -28,7 +28,7 @@ const getArtistBio = async (name) => {
 };
 
 // function to get event data information with all needed params
-const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}`;
+const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}&geoCountryIso2=US`;
 const options = {
   method: "GET",
   headers: { Accept: "application/json" },
@@ -40,6 +40,8 @@ const getEventData = async (queryParams) => {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log(data);
+    // !wait for html to be ready to run this function
+    //displayEventData(data);
   } catch (error) {
     console.error(error);
   }
@@ -89,7 +91,7 @@ const getArtistImgAndStatistic = async (id) => {
 };
 
 // !temporary, wait for form to be ready
-getArtistBio("AC/DC")
-getSearchArtist("AC/DC");
+//getArtistBio("AC/DC")
+//getSearchArtist("AC/DC");
 
 export { getArtistBio, getEventData, getSearchArtist };

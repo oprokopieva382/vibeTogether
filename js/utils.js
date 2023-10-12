@@ -4,4 +4,6 @@ const catchArtistBioError = (data) => {
   }
 };
 
+
+
 export { catchArtistBioError };
