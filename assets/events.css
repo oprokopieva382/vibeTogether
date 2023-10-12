@@ -10,9 +10,8 @@ html {
 }
 
 #button-container {
-    width: 39vw;
-    margin-top: 3vh;
-    margin-left: 2vw;
+    margin: 3vh 0;
+    margin-left: 1vw;
 }
 
 header button a {
@@ -26,19 +25,12 @@ header button a {
 h1 {
     color: var(--text-color) !important;
     text-align: center !important;
-    /* Center the text */
     border-bottom: 5px solid white !important;
-    /* Add a 1px solid black underline */
     line-height: 0 !important;
-    /* Collapse any extra space above the text */
+    /* Adjust the padding to control the underline */
     padding: 25px 0 !important;
-    /* Adjust the padding to control the underline's extension */
     margin: 0 35vw !important;
 
-}
-
-.container {
-    margin-left: 17vw !important;
 }
 
 .date {
