@@ -1,4 +1,4 @@
-import { catchArtistBioError } from "./utils.js";
+import { catchArtistBioError, catchEventDataError } from "./utils.js";
 import {
   displayArtistBio,
   displayArtistPlaylists,
@@ -8,7 +8,7 @@ import {
 const artistBioAPI_KEY = "982540db251e7848a4ddaec3f121f25d";
 const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
 
-const errorMessage = document.getElementById("errorMessage");
+const errorMessage = document.getElementById("errorFeedback");
 
 // function to get Artist Bio information
 const getArtistBio = async (name) => {
@@ -16,9 +16,9 @@ const getArtistBio = async (name) => {
     const response = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${artistBioAPI_KEY}&format=json`
     );
-
     const data = await response.json();
     console.log(data);
+    errorMessage.textContent = "";
     catchArtistBioError(data);
     displayArtistBio(data);
   } catch (error) {
@@ -40,10 +40,11 @@ const getEventData = async (queryParams) => {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log(data);
+    catchEventDataError(data);
     // !wait for html to be ready to run this function
     //displayEventData(data);
   } catch (error) {
-    console.error(error);
+    console.error(error.message);
   }
 };
 
@@ -64,7 +65,7 @@ const getSearchArtist = async (name) => {
     displayArtistPlaylists(result);
     const id = result.data[0].artist.id;
     getArtistImgAndStatistic(id);
-    } catch (error) {
+  } catch (error) {
     console.error(error);
   }
 };
