@@ -1,13 +1,14 @@
 :root {
   --main-color: #0f102a; 
   --second-color: #b0b7db;
-  --text-color:#fff
+  --text-color:#fff;
 }
 * {
   margin: 0;
   padding: 0;
   z-index: 1;
 }
+
 body {
   margin: 0;
   overflow: hidden;
@@ -91,4 +92,3 @@ main {
   cursor: pointer;
   color: var(--second-color);
 }
-
