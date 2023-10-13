@@ -113,7 +113,7 @@ main {
   transform: scale(0.95);
 }
 
-/* Apply styles for mobile screens */
+/* Modal form media queries. Apply styles for mobile screens */
 @media screen and (max-width: 768px) {
   .label {
     text-align: center;
