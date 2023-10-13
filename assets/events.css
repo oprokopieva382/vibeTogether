@@ -45,7 +45,6 @@ img {
     width: 40px;
     margin-right: 5px;
 }
-
 /* Apply styles for mobile screens */
 @media screen and (max-width: 768px) {
     #header-bg {
@@ -66,4 +65,3 @@ img {
         margin: 0 !important;
     }
 }
-
