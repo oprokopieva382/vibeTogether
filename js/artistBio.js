@@ -15,11 +15,11 @@ const playlist = document.getElementById("playlist");
 const artistBioButton = document.getElementById("bioBtn");
 const bioSearchNameOfArtist = document.getElementById("bioSearch");
 
+//function to display biography data from getArtistBio request
 const displayArtistBio = (data) => {
-  console.log(data);
   topArtistsSection.style.display = "none";
   artistBioSection.style.display = "flex";
-  bioSearchNameOfArtist.value = ""
+  bioSearchNameOfArtist.value = "";
 
   artistOnTour.textContent = `On tour: ${data.artist.ontour}`;
   artistPlayCount.textContent = `Play count: ${data.artist.stats.playcount}`;
@@ -27,12 +27,15 @@ const displayArtistBio = (data) => {
   aboutTheArtistContent.textContent = data.artist.bio.content;
 };
 
+//function to display img and statistic data from getArtistImgAndStatistic request
 const displayArtistImgAndStatistic = (result) => {
   artistNameToDisplay.textContent = result.name;
   artistImg.src = result.picture_medium;
   nbOfAlbum.textContent = `${result.nb_album} albums`;
   nbOfFans.textContent = `${result.nb_fan} fans`;
 };
+
+//function to display playlist data from getSearchArtist request
 const displayArtistPlaylists = (result) => {
   let lists = result.data;
 
@@ -42,7 +45,6 @@ const displayArtistPlaylists = (result) => {
     const listItem = document.createElement("li");
     listItem.textContent = lists[i].title;
 
-    // Add an event listener to play the associated track when clicked
     listItem.addEventListener("click", () => {
       audioPlayer.src = lists[i].preview;
       audioPlayer.play();
@@ -54,11 +56,9 @@ const displayArtistPlaylists = (result) => {
 
 //function to handle event from artist bio form, call getArtistBio request
 const onSubmitArtistBio = (e) => {
-  console.log("onSubmitArtistBio");
   e.preventDefault();
 
   const name = bioSearchNameOfArtist.value.trim();
-  console.log(name);
 
   if (name === "") {
     errorFeedback.textContent = "Please enter a valid name";

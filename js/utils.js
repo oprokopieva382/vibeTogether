@@ -1,6 +1,5 @@
-//let error = document.getElementById("eventError")
+let error = document.getElementById("eventError")
 const errorMessage = document.getElementById("errorFeedback");
-console.log(errorMessage);
 const catchArtistBioError = (data) => {
   if (data.error) {
     errorMessage.textContent = data.message;
@@ -16,4 +15,4 @@ const catchEventDataError = (data) => {
   }
 };
 
-export { catchArtistBioError, catchEventDataError }
+export { catchArtistBioError, catchEventDataError };

@@ -1,16 +1,6 @@
 import { getEventData } from "./restAPI.js";
 
-const valueOfArtistName = document
-  .getElementById("valueOfArtistName")
-  ?.value.trim();
-const genreSelect = document.getElementById("genreSelect")?.value;
-const usStates = document.getElementById("usStates")?.value;
-const valueOfEventType = document.querySelector("input[name='type']:checked");
-
 const searchEventButton = document.getElementById("searchEventButton");
-
-const errorFeedback = document.getElementById("errorFeedback");
-
 const eventsBtn = document.querySelector("#eventsBtn");
 const eventsModal = document.querySelector("#events-modal");
 const eventsModalBg = document.querySelector("#events-modal-bg");
@@ -20,6 +10,12 @@ const onSubmitEvent = (e) => {
   e.preventDefault();
 
   const queryParams = [];
+  const valueOfArtistName = document
+    .getElementById("valueOfArtistName")
+    ?.value.trim();
+  const genreSelect = document.getElementById("genreSelect")?.value;
+  const usStates = document.getElementById("usStates")?.value;
+  const valueOfEventType = document.querySelector("input[name='type']:checked");
 
   if (valueOfArtistName) {
     queryParams.push(`artistName=${encodeURIComponent(valueOfArtistName)}`);
@@ -34,7 +30,9 @@ const onSubmitEvent = (e) => {
     queryParams.push(`geoStateIso=${encodeURIComponent(usStates)}`);
   }
 
-  getEventData(queryParams);
+  if (queryParams.length > 0) {
+    getEventData(queryParams)
+  }
 };
 
 searchEventButton?.addEventListener("click", onSubmitEvent);

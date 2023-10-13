@@ -1,4 +1,5 @@
 import { catchArtistBioError, catchEventDataError } from "./utils.js";
+import { displayEventData } from "./events.js";
 import {
   displayArtistBio,
   displayArtistPlaylists,
@@ -10,13 +11,11 @@ const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
 
 // function to get Artist Bio information
 const getArtistBio = async (name) => {
- 
   try {
     const response = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${artistBioAPI_KEY}&format=json`
     );
     const data = await response.json();
-    console.log(data);
     errorMessage.textContent = "";
     catchArtistBioError(data);
     displayArtistBio(data);
@@ -33,16 +32,16 @@ const options = {
 };
 
 const getEventData = async (queryParams) => {
+  console.log(queryParams);
   const url = `${baseURL}&${queryParams.join("&")}`;
   try {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log(data);
     catchEventDataError(data);
-    // !wait for html to be ready to run this function
-    //displayEventData(data);
+    displayEventData(data);
   } catch (error) {
-    console.error(error.message);
+    console.error(`An error occurred: ${error.message}`);
   }
 };
 
@@ -82,15 +81,10 @@ const getArtistImgAndStatistic = async (id) => {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
     displayArtistImgAndStatistic(result);
   } catch (error) {
     console.error(error);
   }
 };
-
-// !temporary, wait for form to be ready
-// getArtistBio("Taylor Swift");
-// getSearchArtist("Taylor Swift");
 
 export { getArtistBio, getEventData, getSearchArtist };
