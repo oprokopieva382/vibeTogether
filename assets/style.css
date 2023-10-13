@@ -92,3 +92,18 @@ main {
   cursor: pointer;
   color: var(--second-color);
 }
+
+.radio {
+  border-radius: 5px;
+  padding: 10px;
+  width: 12vw;
+  transition: transform 0.2s;
+}
+
+.radio:hover {
+  color: black !important;
+}
+
+.radio:active {
+  transform: scale(0.95);
+}
