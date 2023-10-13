@@ -2,6 +2,7 @@
   --main-color: #0f102a; 
   --second-color: #b0b7db;
   --text-color:#fff;
+  --hover-color: #363636;
 }
 * {
   margin: 0;
@@ -91,6 +92,10 @@ main {
   text-decoration: underline;
   cursor: pointer;
   color: var(--second-color);
+}
+
+#eventsBtn:hover {
+  color: var(--hover-color);
 }
 
 .radio {
