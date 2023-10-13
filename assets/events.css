@@ -51,5 +51,20 @@ img {
     #header-bg {
         justify-content: center;
     }
+
+    #button-container {
+        margin: 3vh 0;
+    }
+
+    h1 {
+        color: var(--text-color) !important;
+        text-align: center !important;
+        border-bottom: 5px solid white !important;
+        line-height: 0 !important;
+        /* Adjust the padding to control the underline */
+        padding: 25px 0 !important;
+        margin: 0 !important;
+    }
+
 }
 
