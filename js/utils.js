@@ -1,5 +1,5 @@
 let error = document.getElementById("eventMessageError");
-// console.log(error)
+
 const errorMessage = document.getElementById("errorFeedback");
 const catchArtistBioError = (data) => {
   if (data.error) {

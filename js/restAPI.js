@@ -18,7 +18,7 @@ const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
 const getArtistBio = async (name) => {
   try {
     const response = await fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${artistBioAPI_KEY}&format=json`
+      `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${artistBioAPI_KEY}&format=json`
     );
     const data = await response.json();
     errorMessage.textContent = "";
@@ -37,7 +37,6 @@ const options = {
 };
 
 const getEventData = async (queryParams) => {
-  console.log(queryParams);
   const url = `${baseURL}&${queryParams.join("&")}`;
   try {
     const response = await fetch(url, options);
