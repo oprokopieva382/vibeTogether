@@ -13,25 +13,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../assets/bioStyle.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   </head>
   <body>
+      
     <!-- Nav -->
     <header class="bg-gray-900 flex items-center h-28">
-      <a href="../index.html" class="logo justify-self-start m-1 ml-6 mb-4 mt-2"
-        >VibeTogether</a
-      >
-      <p id="findVibe" class="flex-auto -ml">Find someone to vibe with</p>
+      <a href="../index.html" class="logo justify-self-start m-1 ml-6 mb-4 mt-2">VibeTogether</a>
     </header>
+
     <!-- Error feedback -->
     <div id="errorFeedback" class="has-text-danger text-center"></div>
-    <div class="text-center mt-5">
+
+    <!-- Search Bar -->
+    <div id="searchBar" class="text-center">
+      <p id="findVibe">Looking for someone to vibe with?</p>
       <input type="text" id="bioSearch" class="w-72 p-2" />
       <button id="bioBtn" class="bg-gray-300">Search</button>
     </div>
+
     <!-- hidden artist bio section -->
     <section id="artistBio" class="artistBio">
       <span id="errorMessage" class="errorMessage"></span>
@@ -56,62 +56,41 @@
       </div>
     </section>
     <main class="columns" id="topArtistsSection">
+
       <!-- Search History -->
-      <aside class="column is-1 ml-3 text-center" id="historyOfArtistSearch">
-        <h3 class="text-center text-3xl border-b-4 text-white">
-          Recent Searches
-        </h3>
-        <div class="flex flex-col">
-          <button class="top-artist-link text-center text-white mt-2 text-2xl">
-            Taylor Swift
-          </button>
-          <button class="top-artist-link text-center text-white mt-2 text-2xl">
-            Ariana Grande
-          </button>
-          <button class="top-artist-link text-center text-white mt-2 text-2xl">
-            The Weekend
-          </button>
-        </div>
+      <aside class="column is-2 text-center">
+        <h3 class="text-center text-3xl border-b-4 text-white">Recent Searches</h3>
+        <div id="historyOfArtistSearch" class="flex flex-col"></div>
       </aside>
+
       <!-- top artist -->
       <div
         id="top-artist"
-        class="topArtistContainer mt-10 coloumn is-9 py-12 flex grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10"
+        class="topArtistContainer coloumn is-9 py-12 grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10"
       >
         <div class="flex flex-col mx-28">
           <figure class="image is-square">
-            <img
-              src="../assets/images/tswift.jpg"
-              class="is-rounded bg-white"
-            />
+            <img src="../assets/images/tswift.PNG" class="is-rounded bg-white" />
           </figure>
-          <button class="top-artist-link text-center text-white text-3xl" data-artist-name="Taylor Swift">
-            Taylor Swift
-          </button>
+          <button class="top-artist-link text-center text-white text-3xl">Taylor Swift</button>
         </div>
         <div class="flex flex-col mx-28">
           <figure class="image is-square">
             <img src="../assets/images/week.jpg" class="is-rounded bg-white" />
           </figure>
-          <button class="top-artist-link text-center text-white mt-2 text-3xl" data-artist-name="Weeknd">
-            Weeknd
-          </button>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">Weeknd</button>
         </div>
         <div class="flex flex-col mx-28">
           <figure class="image is-square">
             <img src="../assets/images/ed.jpg" class="is-rounded bg-white" />
           </figure>
-          <button class="top-artist-link text-center text-white mt-2 text-3xl" data-artist-name="Ed Sheeran">
-            Ed Sheeran
-          </button>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">Ed Sheeran</button>
         </div>
         <div class="flex flex-col mx-28">
           <figure class="image is-square">
             <img src="../assets/images/drake.jpg" class="is-rounded bg-white" />
           </figure>
-          <button class="top-artist-link text-center text-white mt-2 text-3xl" data-artist-name="Drake">
-            Drake
-          </button>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">Drake</button>
         </div>
         <div class="flex flex-col mx-28">
           <figure class="image is-square">
@@ -123,14 +102,9 @@
         </div>
         <div class="flex flex-col mx-28">
           <figure class="image is-square">
-            <img
-              src="../assets/images/marshal.jpg"
-              class="is-rounded bg-white"
-            />
+            <img src="../assets/images/marshal.jpg" class="is-rounded bg-white" />
           </figure>
-          <button class="top-artist-link text-center text-white mt-2 text-3xl">
-            Eminem
-          </button>
+          <button class="top-artist-link text-center text-white mt-2 text-3xl">Eminem</button>
         </div>
       </div>
     </main>
