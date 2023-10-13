@@ -60,11 +60,18 @@ const onSubmitArtistBio = (e) => {
   e.preventDefault();
 
   const name = bioSearchNameOfArtist.value.trim();
+  const validation = /^[A-Za-z\s-]+$/;
 
-  if (name === "") {
-    errorFeedback.textContent = "Please enter a valid name";
-  } else {
-    errorFeedback.textContent = "";
+  const errorMessage =
+    name === ""
+      ? "Please enter a valid name"
+      : validation.test(name)
+      ? ""
+      : "Invalid characters in the artist name";
+
+  errorFeedback.textContent = errorMessage;
+
+  if (errorMessage === "") {
     getArtistBio(name);
     getSearchArtist(name);
     addSearchedArtist(name);
@@ -77,7 +84,6 @@ searchedArtists = JSON.parse(localStorage.getItem("searchedArtists")) || [];
 
 // Function to add an artist to the searched artists list
 const addSearchedArtist = (artistName) => {
-  console.log(artistName);
   // Check if the artist is not already in the list before adding
   if (
     !searchedArtists.includes(artistName) &&
@@ -119,7 +125,6 @@ if (searchedArtists.length > maxRecentSearches) {
 }
 
 updateArtistSearchHistory();
-
 artistBioButton?.addEventListener("click", onSubmitArtistBio);
 
 export {

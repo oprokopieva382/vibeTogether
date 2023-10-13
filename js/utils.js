@@ -15,4 +15,10 @@ const catchEventDataError = (data) => {
   }
 };
 
-export { catchArtistBioError, catchEventDataError };
+const catchBadResponseStatus =(res)=> {
+if(res.status !== 200) {
+   throw new Error(`Failed to fetch data. Status: ${response.status}`);
+}
+}
+
+export { catchArtistBioError, catchEventDataError, catchBadResponseStatus };

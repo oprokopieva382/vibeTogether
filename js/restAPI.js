@@ -1,4 +1,8 @@
-import { catchArtistBioError, catchEventDataError } from "./utils.js";
+import {
+  catchArtistBioError,
+  catchEventDataError,
+  catchBadResponseStatus,
+} from "./utils.js";
 import { displayEventData } from "./events.js";
 import {
   displayArtistBio,
@@ -58,6 +62,7 @@ const getSearchArtist = async (name) => {
 
   try {
     const response = await fetch(url, options);
+    catchBadResponseStatus(response);
     const result = await response.json();
     displayArtistPlaylists(result);
     const id = result.data[0].artist.id;
@@ -80,6 +85,7 @@ const getArtistImgAndStatistic = async (id) => {
 
   try {
     const response = await fetch(url, options);
+    catchBadResponseStatus(response);
     const result = await response.json();
     displayArtistImgAndStatistic(result);
   } catch (error) {
