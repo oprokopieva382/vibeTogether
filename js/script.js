@@ -12,7 +12,6 @@ const eventTitle = document.getElementById("eventTitle");
 
 // function to display searching event after getting response from getEventData
 const displayEventData = (data) => {
-  debugger
   let resultList = data.events;
   logoSection.style.display = "none";
   eventDisplayContainer.style.display = "block";
@@ -53,13 +52,15 @@ const onSubmitEvent = (e) => {
     .value.trim();
   const genreSelect = document.getElementById("genreSelect").value;
   const usStates = document.getElementById("usStates").value;
-  const valueOfEventType = document.querySelector("input[name='type']:checked");
-
+  //const valueOfEventType = document.querySelector("input[name='type']:checked");
+  const selectedRadio = document.querySelector("input[name='type']:checked");
+  const valueOfEventType = selectedRadio ? selectedRadio.value : "";
+  
   if (valueOfArtistName) {
     queryParams.push(`artistName=${encodeURIComponent(valueOfArtistName)}`);
-      }
+  }
   if (valueOfEventType) {
-    queryParams.push(`eventType=${encodeURIComponent(valueOfEventType.value)}`);
+    queryParams.push(`eventType=${encodeURIComponent(valueOfEventType)}`);
   }
   if (genreSelect) {
     queryParams.push(`genreSlug=${encodeURIComponent(genreSelect)}`);
@@ -71,7 +72,8 @@ const onSubmitEvent = (e) => {
   if (queryParams.length > 0) {
     showPreloader();
     getEventData(queryParams);
-   }
+  }
+
 };
 
 searchEventButton?.addEventListener("click", onSubmitEvent);
