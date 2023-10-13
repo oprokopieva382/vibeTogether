@@ -14,6 +14,7 @@ const audioPlayer = document.getElementById("audioPlayer");
 const playlist = document.getElementById("playlist");
 const artistBioButton = document.getElementById("bioBtn");
 const bioSearchNameOfArtist = document.getElementById("bioSearch");
+const historyOfArtistSearch = document.getElementById("historyOfArtistSearch");
 
 //function to display biography data from getArtistBio request
 const displayArtistBio = (data) => {
@@ -66,8 +67,58 @@ const onSubmitArtistBio = (e) => {
     errorFeedback.textContent = "";
     getArtistBio(name);
     getSearchArtist(name);
+    addSearchedArtist(name);
   }
 };
+
+//code below take care of artist search history
+let searchedArtists = [];
+searchedArtists = JSON.parse(localStorage.getItem("searchedArtists")) || [];
+
+// Function to add an artist to the searched artists list
+const addSearchedArtist = (artistName) => {
+  console.log(artistName);
+  // Check if the artist is not already in the list before adding
+  if (
+    !searchedArtists.includes(artistName) &&
+    artistName !== "Taylor Swift" &&
+    artistName !== "Ariana Grande" &&
+    artistName !== "The Weekend"
+  ) {
+    searchedArtists.push(artistName);
+    console.log(searchedArtists);
+    localStorage.setItem("searchedArtists", JSON.stringify(searchedArtists));
+  }
+};
+
+const updateArtistSearchHistory = () => {
+  // Loop through the searchedArtists array and create buttons for each artist
+  searchedArtists.forEach((artistName) => {
+    let button = document.createElement("button");
+    button.textContent = artistName;
+    button.classList.add(
+      "top-artist-link",
+      "text-center",
+      "text-white",
+      "mt-2",
+      "text-2xl"
+    );
+    button.addEventListener("click", () => {
+      // When a recent search button is clicked, perform a new search for that artist
+      bioSearchNameOfArtist.value = artistName;
+      onSubmitArtistBio(new Event("click")); // Trigger the search event
+    });
+    historyOfArtistSearch?.append(button);
+  });
+};
+
+// Limit the number of recent searches (e.g., keep the last 5)
+const maxRecentSearches = 10;
+if (searchedArtists.length > maxRecentSearches) {
+  searchedArtists.shift(); // Remove the oldest search
+}
+
+updateArtistSearchHistory();
 
 artistBioButton?.addEventListener("click", onSubmitArtistBio);
 
