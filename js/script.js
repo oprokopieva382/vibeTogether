@@ -8,12 +8,14 @@ const preloader = document.getElementById("preloader");
 const eventsContainer = document.getElementById("eventsContainer");
 const eventDisplayContainer = document.getElementById("eventDisplayContainer");
 const logoSection = document.getElementById("logoSection");
+const eventTitle = document.getElementById("eventTitle");
 
 // function to display searching event after getting response from getEventData
 const displayEventData = (data) => {
   let resultList = data.events;
   logoSection.style.display = "none";
   eventDisplayContainer.style.display = "block";
+  eventTitle.style.position = "relative";
   eventsContainer.innerHTML = "";
 
   for (let i = 0; i < resultList.length; i++) {
