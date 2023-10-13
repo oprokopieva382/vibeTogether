@@ -2,6 +2,7 @@
   --main-color: #0f102a; 
   --second-color: #b0b7db;
   --text-color:#fff;
+  --hover-color: #363636;
 }
 * {
   margin: 0;
@@ -49,7 +50,7 @@ h4 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
   padding-left: 5%;
   font-size: 170%;
 }
@@ -91,4 +92,38 @@ main {
   text-decoration: underline;
   cursor: pointer;
   color: var(--second-color);
+}
+
+#eventsBtn:hover {
+  color: var(--hover-color);
+}
+
+.radio {
+  border-radius: 5px;
+  padding: 10px;
+  width: 12vw;
+  transition: transform 0.2s;
+}
+
+.radio:hover {
+  color: black !important;
+}
+
+.radio:active {
+  transform: scale(0.95);
+}
+
+/* Modal form media queries. Apply styles for mobile screens */
+@media screen and (max-width: 768px) {
+  .label {
+    text-align: center;
+  }
+
+  .field {
+    text-align: center;
+  }
+
+  .radio {
+    width: 30vw;
+  }
 }
