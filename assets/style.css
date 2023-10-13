@@ -1,7 +1,7 @@
 :root {
-  --main-color: #0f102a; 
+  --main-color: #0f102a;
   --second-color: #b0b7db;
-  --text-color:#fff;
+  --text-color: #fff;
   --hover-color: #363636;
 }
 * {
@@ -72,7 +72,7 @@ h4 {
 .aboutTheArtist {
   flex: 6;
 }
-.artistImg{
+.artistImg {
   border: 1px solid;
   border-radius: 50%;
   margin-bottom: 5%;
@@ -147,20 +147,33 @@ h4 {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 img {
-    display: inline;
-    width: 40px;
-    margin-right: 5px;
+  display: inline;
+  width: 40px;
+  margin-right: 5px;
 }
 #eventTitle {
-    color: var(--text-color) !important;
-    text-align: center !important;
-    border-bottom: 5px solid white !important;
-    line-height: 0 !important;
-    /* Adjust the padding to control the underline */
-    padding: 25px 0 !important;
-    margin: 0 35vw !important;
+  color: var(--text-color) !important;
+  text-align: center !important;
+  border-bottom: 5px solid white !important;
+  line-height: 0 !important;
+  /* Adjust the padding to control the underline */
+  padding: 25px 0 !important;
+  margin: 0 35vw !important;
+}
+.date {
+  border: 1px solid grey;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+#errorFeedback {
+ margin: 0 auto;
 }
