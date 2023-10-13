@@ -3,12 +3,13 @@ import {
   catchEventDataError,
   catchBadResponseStatus,
 } from "./utils.js";
-import { displayEventData } from "./events.js";
+// import { displayEventData } from "./events.js";
 import {
   displayArtistBio,
   displayArtistPlaylists,
   displayArtistImgAndStatistic,
 } from "./artistBio.js";
+import { hidePreloader, displayEventData } from "./script.js";
 
 const artistBioAPI_KEY = "982540db251e7848a4ddaec3f121f25d";
 const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
@@ -42,10 +43,12 @@ const getEventData = async (queryParams) => {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log(data);
+    hidePreloader();
     catchEventDataError(data);
     displayEventData(data);
   } catch (error) {
     console.error(`An error occurred: ${error.message}`);
+    hidePreloader();
   }
 };
 

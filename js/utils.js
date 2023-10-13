@@ -1,4 +1,5 @@
-let error = document.getElementById("eventError")
+let error = document.getElementById("eventMessageError");
+// console.log(error)
 const errorMessage = document.getElementById("errorFeedback");
 const catchArtistBioError = (data) => {
   if (data.error) {
@@ -7,11 +8,13 @@ const catchArtistBioError = (data) => {
 };
 
 const catchEventDataError = (data) => {
-  if (!data.events.length) {
+  if (data.events && data.events.length == 0) {
+    error.classList.add("has-text-danger");
     error.textContent =
       "Looks like your artist do not have upcoming events or check if you type name right";
   } else {
-    error.textContent = "";
+     error.classList.remove("has-text-danger");
+    error.textContent = "Looking for somewhere to vibe at?";
   }
 };
 

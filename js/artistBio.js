@@ -92,8 +92,7 @@ const addSearchedArtist = (artistName) => {
     artistName !== "The Weekend"
   ) {
     searchedArtists.push(artistName);
-    console.log(searchedArtists);
-    localStorage.setItem("searchedArtists", JSON.stringify(searchedArtists));
+     localStorage.setItem("searchedArtists", JSON.stringify(searchedArtists));
   }
 };
 

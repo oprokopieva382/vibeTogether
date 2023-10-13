@@ -21,27 +21,3 @@ header button a {
 #header-bg {
     background-color: var(--header-bg-color) !important;
 }
-
-h1 {
-    color: var(--text-color) !important;
-    text-align: center !important;
-    border-bottom: 5px solid white !important;
-    line-height: 0 !important;
-    /* Adjust the padding to control the underline */
-    padding: 25px 0 !important;
-    margin: 0 35vw !important;
-
-}
-
-.date {
-    border: 1px solid grey;
-    padding: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-}
-
-img {
-    display: inline;
-    width: 40px;
-    margin-right: 5px;
-}
