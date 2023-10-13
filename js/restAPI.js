@@ -37,7 +37,6 @@ const options = {
 };
 
 const getEventData = async (queryParams) => {
-  console.log(queryParams);
   const url = `${baseURL}&${queryParams.join("&")}`;
   try {
     const response = await fetch(url, options);
