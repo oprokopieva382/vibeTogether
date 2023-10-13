@@ -2,6 +2,7 @@
   --main-color: #0f102a; 
   --second-color: #b0b7db;
   --text-color:#fff;
+  --hover-color: #363636;
 }
 * {
   margin: 0;
@@ -49,13 +50,9 @@ h4 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
   padding-left: 5%;
   font-size: 170%;
-}
-
-main {
-  /* display: none; */
 }
 
 /* artistBioContent hidden section */
@@ -91,4 +88,79 @@ main {
   text-decoration: underline;
   cursor: pointer;
   color: var(--second-color);
+}
+#eventsBtn:hover {
+  color: var(--hover-color);
+}
+
+.radio {
+  border-radius: 5px;
+  padding: 10px;
+  width: 12vw;
+  transition: transform 0.2s;
+}
+
+.radio:hover {
+  color: black !important;
+}
+
+.radio:active {
+  transform: scale(0.95);
+}
+
+/* Modal form media queries. Apply styles for mobile screens */
+@media screen and (max-width: 768px) {
+  .label {
+    text-align: center;
+  }
+
+  .field {
+    text-align: center;
+  }
+
+  .radio {
+    width: 30vw;
+  }
+}
+
+/* preloader styling*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+img {
+    display: inline;
+    width: 40px;
+    margin-right: 5px;
+}
+#eventTitle {
+    color: var(--text-color) !important;
+    text-align: center !important;
+    border-bottom: 5px solid white !important;
+    line-height: 0 !important;
+    /* Adjust the padding to control the underline */
+    padding: 25px 0 !important;
+    margin: 0 35vw !important;
 }

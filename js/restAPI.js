@@ -1,22 +1,26 @@
-import { catchArtistBioError, catchEventDataError } from "./utils.js";
+import {
+  catchArtistBioError,
+  catchEventDataError,
+  catchBadResponseStatus,
+} from "./utils.js";
+// import { displayEventData } from "./events.js";
 import {
   displayArtistBio,
   displayArtistPlaylists,
   displayArtistImgAndStatistic,
 } from "./artistBio.js";
+import { hidePreloader, displayEventData } from "./script.js";
 
 const artistBioAPI_KEY = "982540db251e7848a4ddaec3f121f25d";
 const APIKEY = "5167d0f0-49ab-41dd-bc99-43a9e6a07081";
 
 // function to get Artist Bio information
 const getArtistBio = async (name) => {
- 
   try {
     const response = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${artistBioAPI_KEY}&format=json`
     );
     const data = await response.json();
-    console.log(data);
     errorMessage.textContent = "";
     catchArtistBioError(data);
     displayArtistBio(data);
@@ -33,16 +37,18 @@ const options = {
 };
 
 const getEventData = async (queryParams) => {
+  console.log(queryParams);
   const url = `${baseURL}&${queryParams.join("&")}`;
   try {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log(data);
+    hidePreloader();
     catchEventDataError(data);
-    // !wait for html to be ready to run this function
-    //displayEventData(data);
+    displayEventData(data);
   } catch (error) {
-    console.error(error.message);
+    console.error(`An error occurred: ${error.message}`);
+    hidePreloader();
   }
 };
 
@@ -59,6 +65,7 @@ const getSearchArtist = async (name) => {
 
   try {
     const response = await fetch(url, options);
+    catchBadResponseStatus(response);
     const result = await response.json();
     displayArtistPlaylists(result);
     const id = result.data[0].artist.id;
@@ -81,16 +88,12 @@ const getArtistImgAndStatistic = async (id) => {
 
   try {
     const response = await fetch(url, options);
+    catchBadResponseStatus(response);
     const result = await response.json();
-    console.log(result);
     displayArtistImgAndStatistic(result);
   } catch (error) {
     console.error(error);
   }
 };
-
-// !temporary, wait for form to be ready
-// getArtistBio("Taylor Swift");
-// getSearchArtist("Taylor Swift");
 
 export { getArtistBio, getEventData, getSearchArtist };

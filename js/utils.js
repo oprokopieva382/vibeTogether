@@ -1,6 +1,6 @@
-//let error = document.getElementById("eventError")
+let error = document.getElementById("eventMessageError");
+// console.log(error)
 const errorMessage = document.getElementById("errorFeedback");
-console.log(errorMessage);
 const catchArtistBioError = (data) => {
   if (data.error) {
     errorMessage.textContent = data.message;
@@ -8,12 +8,20 @@ const catchArtistBioError = (data) => {
 };
 
 const catchEventDataError = (data) => {
-  if (!data.events.length) {
+  if (data.events && data.events.length == 0) {
+    error.classList.add("has-text-danger");
     error.textContent =
       "Looks like your artist do not have upcoming events or check if you type name right";
   } else {
-    error.textContent = "";
+     error.classList.remove("has-text-danger");
+    error.textContent = "Looking for somewhere to vibe at?";
   }
 };
 
-export { catchArtistBioError, catchEventDataError }
+const catchBadResponseStatus =(res)=> {
+if(res.status !== 200) {
+   throw new Error(`Failed to fetch data. Status: ${response.status}`);
+}
+}
+
+export { catchArtistBioError, catchEventDataError, catchBadResponseStatus };

@@ -19,7 +19,6 @@
     />
     <title>VibeTogether</title>
   </head>
-
   <body>
     <!-- main page -->
     <main>
@@ -33,7 +32,8 @@
           >
             EVENTS
           </button>
-          <a href="./routes/bio.html"
+          <a
+            href="./routes/bio.html"
             class="text-white font-bold px-6 py-6"
             id="artistBioBtn"
           >
@@ -44,15 +44,27 @@
       <video autoplay muted loop id="background-video">
         <source src="./assets/video/syren.mp4" type="video/mp4" />
       </video>
-      <section class="logoSection">
+      <section class="logoSection" id="logoSection">
         <h1 class="logo">VibeTogether</h1>
       </section>
     </main>
+    <!-- preloader -->
+    <section id="preloader" class="preloader">
+      <!-- Add your loading spinner or animation here -->
+      <div class="loader"></div>
+    </section>
+    <!-- hidden event to display -->
+    <div id="eventDisplayContainer">
+      <p id="eventTitle" class="title is-1 has-text-centered mt-3">Events</p>
+      <div class="container mt-6" id="eventsContainer"></div>
+    </div>
     <!-- modal -->
     <div class="modal" id="events-modal">
       <div class="modal-background" id="events-modal-bg"></div>
       <div class="modal-content has-background-white py-5 px-5">
-        <h3 class="has-text-centered">Looking for somewhere to vibe at?</h3>
+        <h3 class="has-text-centered mb-2" id="eventMessageError">
+          Looking for somewhere to vibe at?
+        </h3>
         <form>
           <!-- text input field -->
           <div class="field">
@@ -74,14 +86,14 @@
                 <div class="field">
                   <label class="label">Type</label>
                   <div class="control">
-                    <div class="field">
-                      <label class="radio has-text-black">
+                    <div class="field" id="concerts-field">
+                      <label class="radio has-text-white has-background-link">
                         <input type="radio" name="type"/>
                         Concerts
                       </label>
                     </div>
-                    <div class="field">
-                      <label class="radio has-text-black">
+                    <div class="field" id="festivals-field">
+                      <label class="radio has-text-white has-background-link">
                         <input type="radio" name="type"/>
                         Festivals
                       </label>
@@ -216,11 +228,11 @@
               Search
             </button>
           </div>
+          <p></p>
         </form>
       </div>
     </div>
-   <p id="errorFeedback"></p>
-    <!-- <script src="./js/restAPI.js"></script> -->
+    <p id="errorFeedback"></p>
     <script type="module" src="./js/script.js"></script>
   </body>
 </html>
