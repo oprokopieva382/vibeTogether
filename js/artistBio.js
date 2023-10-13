@@ -123,6 +123,17 @@ if (searchedArtists.length > maxRecentSearches) {
   searchedArtists.shift(); // Remove the oldest search
 }
 
+// Add event listeners to the default buttons with top artists"
+document.querySelectorAll(".top-artist-link").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const artistName = event.currentTarget.getAttribute("data-artist-name");
+    
+    bioSearchNameOfArtist.value = artistName;
+    
+    onSubmitArtistBio(new Event("click"));
+  });
+});
+
 updateArtistSearchHistory();
 artistBioButton?.addEventListener("click", onSubmitArtistBio);
 

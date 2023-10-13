@@ -12,6 +12,7 @@ const eventTitle = document.getElementById("eventTitle");
 
 // function to display searching event after getting response from getEventData
 const displayEventData = (data) => {
+  debugger
   let resultList = data.events;
   logoSection.style.display = "none";
   eventDisplayContainer.style.display = "block";

@@ -8,6 +8,7 @@ const catchArtistBioError = (data) => {
 };
 
 const catchEventDataError = (data) => {
+  debugger
   if (data.events && data.events.length == 0) {
     error.classList.add("has-text-danger");
     error.textContent =
