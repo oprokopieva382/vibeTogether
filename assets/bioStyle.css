@@ -34,9 +34,13 @@ header {
 }
 
 /* main page style */
-.logoSection {
-   height: 100vh;
-}
+
+.logo {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color);
+  border: 1px solid;}
+
 main {
   height: 100%;
   flex: auto;
@@ -123,10 +127,31 @@ main {
   top: -40px;
   font-size: xx-large;
 }
-figure {
-  width: 188px;
-}
+
 aside {
   margin-left: 4%;
   max-width: 15%;
+}
+
+figure {
+  width: 188px;
+}
+
+
+@media screen and (max-width: 992px) {
+  header {
+    height: 200px !important;
+  }
+
+aside{
+  min-width: 96%;
+  max-width: auto;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+  .topArtistContainer {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
 }

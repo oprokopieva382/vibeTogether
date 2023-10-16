@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   </head>
   <body>
-      
+
     <!-- Nav -->
     <header class="bg-gray-900 flex items-center h-28">
       <a href="../index.html" class="logo justify-self-start m-1 ml-6 mb-4 mt-2">VibeTogether</a>
@@ -55,10 +55,10 @@
         <p class="aboutTheArtistContent" id="aboutTheArtistContent"></p>
       </div>
     </section>
-    <main class="columns" id="topArtistsSection">
+    <main class="columns is-desktop" id="topArtistsSection">
 
       <!-- Search History -->
-      <aside class="column is-2 text-center">
+      <aside id="history" class="column is-2  text-center">
         <h3 class="text-center text-3xl border-b-4 text-white">Recent Searches</h3>
         <div id="historyOfArtistSearch" class="flex flex-col"></div>
       </aside>
@@ -66,8 +66,9 @@
       <!-- top artist -->
       <div
         id="top-artist"
-        class="topArtistContainer coloumn is-9 py-12 grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10"
+        class="topArtistContainer coloumn is-12 py-12 grid grid-cols-3 content-center justify-items-center gap-y-32 mt-10"
       >
+      
         <div class="flex flex-col mx-28">
           <figure class="image is-square">
             <img src="../assets/images/tswift.PNG" class="is-rounded bg-white" />
