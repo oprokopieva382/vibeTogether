@@ -22,11 +22,17 @@ const displayEventData = (data) => {
     let item = `
          <div class="card has-text-black mb-5">
             <div class="card-content is-flex is-justify-content-space-between is-align-items-center is-size-4 py-4">
-                <p class="date is-flex"><img src="./assets/images/calendar-icon.png" alt="calendar icon">${resultList[i].startDate}</p>
+                <p class="date is-flex"><img src="./assets/images/calendar-icon.png" alt="calendar icon">${
+                  resultList[i].startDate.replace("T", " at ").endsWith(":00")
+                    ? resultList[i].startDate.replace("T", " at ").slice(0, -3)
+                    : resultList[i].startDate.replace("T", " at ")
+                }</p>
                 <p>${resultList[i].name}</p>
                 <p>${resultList[i].location.name}</p>
             </div>
-            <header class="card-header p-2 has-background-grey-lighter">${resultList[i].location.address.streetAddress}, ${resultList[i].location.address.addressLocality}</header>
+            <header class="card-header p-2 has-background-grey-lighter">${
+              resultList[i].location.address.streetAddress
+            }, ${resultList[i].location.address.addressLocality}</header>
           </div>
     `;
     eventsContainer.innerHTML += item;
@@ -52,7 +58,7 @@ const onSubmitEvent = (e) => {
     .value.trim();
   const genreSelect = document.getElementById("genreSelect").value;
   const usStates = document.getElementById("usStates").value;
-  //const valueOfEventType = document.querySelector("input[name='type']:checked");
+
   const selectedRadio = document.querySelector("input[name='type']:checked");
   const valueOfEventType = selectedRadio ? selectedRadio.value : "";
   
