@@ -34,9 +34,13 @@ header {
 }
 
 /* main page style */
-.logoSection {
-   height: 100vh;
-}
+
+.logo {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color);
+  border: 1px solid;}
+
 main {
   height: 100%;
   flex: auto;
@@ -140,9 +144,10 @@ figure {
   }
 
 aside{
-  min-width: 100%;
+  min-width: 96%;
   max-width: auto;
- margin-left: 0px;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
   .topArtistContainer {

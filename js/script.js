@@ -30,7 +30,7 @@ const displayEventData = (data) => {
                 <p>${resultList[i].name}</p>
                 <p>${resultList[i].location.name}</p>
             </div>
-            <header class="card-header p-2 has-background-grey-lighter">${
+            <header class="card-header p-2 is-size-6 has-background-grey-lighter">${
               resultList[i].location.address.streetAddress
             }, ${resultList[i].location.address.addressLocality}</header>
           </div>
