@@ -168,6 +168,10 @@ header{
     margin-left: 4%;
     max-width: 15%;
   }
-
+.top-artist-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--second-color);
+}
 
  
