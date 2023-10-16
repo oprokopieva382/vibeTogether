@@ -144,3 +144,21 @@ aside {
 figure {
   width: 188px;
 }
+
+
+@media screen and (max-width: 992px) {
+  header {
+    height: 200px !important;
+  }
+
+aside{
+  min-width: 100%;
+  max-width: auto;
+ margin-left: 0px;
+}
+
+  .topArtistContainer {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
