@@ -30,14 +30,14 @@ const getArtistBio = async (name) => {
 };
 
 // function to get event data information with all needed params
-const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}&geoCountryIso2=US`;
+const baseURL = `https://www.jambase.com/jb-api/v1/events?apikey=${APIKEY}&geoCountryIso2=US&page=1`;
 const options = {
   method: "GET",
   headers: { Accept: "application/json" },
 };
 
 const getEventData = async (queryParams) => {
-  const url = `${baseURL}&${queryParams.join("&")}`;
+   const url = `${baseURL}&${queryParams.join("&")}`;
   try {
     const response = await fetch(url, options);
     const data = await response.json();

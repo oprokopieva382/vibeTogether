@@ -1,3 +1,4 @@
+/* general styling */
 :root {
   --main-color: #0f102a;
   --second-color: #b0b7db;
@@ -9,7 +10,6 @@
   padding: 0;
   z-index: 1;
 }
-
 body {
   margin: 0;
   overflow: hidden;
@@ -19,12 +19,10 @@ body {
 h1 {
   font-size: 2rem; /* Adjust the size as needed */
 }
-
 h2 {
   font-size: 1.7rem; /* Adjust the size as needed */
   font-weight: bold;
 }
-
 h4 {
   font-size: 1.2rem; /* Adjust the size as needed */
 }
@@ -45,7 +43,6 @@ h4 {
   color: var(--text-color);
   border: 1px solid;
 }
-
 .logoSection {
   display: flex;
   justify-content: flex-start;
@@ -55,55 +52,28 @@ h4 {
   font-size: 170%;
 }
 
-/* artistBioContent hidden section */
+/* artistBioContent */
 .artistBio {
-  display: none;
-  flex-wrap: wrap;
-  gap: 5%;
-  padding: 5%;
   visibility: hidden;
-  color: var(--text-color);
-  overflow-y: scroll;
-  max-height: 100vh;
-}
-.artistStats {
-  flex: 3;
-}
-.aboutTheArtist {
-  flex: 6;
-}
-.artistImg {
-  border: 1px solid;
-  border-radius: 50%;
-  margin-bottom: 5%;
-}
-.artistPlaylist {
-  padding: 10% 0;
-}
+  }
 
-#playlist li {
-  margin-bottom: 10px;
-}
-#playlist li:hover {
-  text-decoration: underline;
-  cursor: pointer;
-  color: var(--second-color);
-}
 #eventsBtn:hover {
   color: var(--hover-color);
 }
-
+img {
+  display: inline;
+  width: 40px;
+  margin-right: 5px;
+}
 .radio {
   border-radius: 5px;
   padding: 10px;
   width: 12vw;
   transition: transform 0.2s;
 }
-
 .radio:hover {
   color: black !important;
 }
-
 .radio:active {
   transform: scale(0.95);
 }
@@ -136,7 +106,6 @@ h4 {
   align-items: center;
   z-index: 9999;
 }
-
 .loader {
   border: 4px solid #f3f3f3;
   border-top: 4px solid #3498db;
@@ -145,7 +114,6 @@ h4 {
   height: 50px;
   animation: spin 2s linear infinite;
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -154,11 +122,8 @@ h4 {
     transform: rotate(360deg);
   }
 }
-img {
-  display: inline;
-  width: 40px;
-  margin-right: 5px;
-}
+
+/* event page styling */
 #eventTitle {
   color: var(--text-color) !important;
   text-align: center !important;
@@ -175,7 +140,7 @@ img {
   border-radius: 5px;
 }
 #errorFeedback {
- margin: 0 auto;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 992px) {
